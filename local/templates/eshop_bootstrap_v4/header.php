@@ -20,7 +20,10 @@ $curPage = $APPLICATION->GetCurPage(true);
 	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
 	<? $APPLICATION->ShowHead(); ?>
 	<link rel="shortcut icon" type="image/x-icon" href="<?=SITE_DIR?>favicon.ico" />
+	
 	<link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/css/multiple-select.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
 	<link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/css/slick.css">
 	<link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/css/slick-theme.css">
 	<link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/fonts/fonts.css">
