@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 ?>
-<? include 'header.php'; ?>
+
 
     <main>
       <section class="banner__section">
@@ -1063,7 +1063,6 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 </div>
 </section>
 
- <? include 'footer.php'; ?>
  <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
 </body>
 </html>
