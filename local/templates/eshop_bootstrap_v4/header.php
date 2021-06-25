@@ -18,8 +18,14 @@ $curPage = $APPLICATION->GetCurPage(true);
 	<title><?$APPLICATION->ShowTitle()?></title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
-	<link rel="shortcut icon" type="image/x-icon" href="<?=SITE_DIR?>favicon.ico" />
 	<? $APPLICATION->ShowHead(); ?>
+	<link rel="shortcut icon" type="image/x-icon" href="<?=SITE_DIR?>favicon.ico" />
+	<link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/css/multiple-select.min.css">
+	<link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/css/slick.css">
+	<link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/css/slick-theme.css">
+	<link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/fonts/fonts.css">
+	<link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/css/style.css">
+	<link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/css/responsive.css">
 </head>
 <body class="bx-background-image bx-theme-<?=$theme?>" <?$APPLICATION->ShowProperty("backgroundImage");?>>
 <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
@@ -206,3 +212,5 @@ $curPage = $APPLICATION->GetCurPage(true);
 			<!--endregion-->
 		</div>
 	</header>
+
+  
