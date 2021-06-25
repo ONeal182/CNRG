@@ -225,7 +225,7 @@ a.link {
 }
 
 .contacts__email a.fcond {
-    font-family: DIN Pro C;
+    font-family: DIN Pro;
     font-size: 19px;
     font-style: normal;
     font-weight: 500;
@@ -1530,7 +1530,12 @@ footer {
 }
 
 .menu__footer {
-    min-width: 33%;
+    padding-right: 0px;
+    width: 33%;
+}
+
+.menu__footer:nth-child(1) {
+    flex: 0;
 }
 
 .title__footer {
@@ -1585,7 +1590,7 @@ a.social__item.insta__footer-soc {
 .breadcrumbs {
     font-size: 16px;
     margin-bottom: 25px;
-    color: #b8b8b8;
+    color: #7a7a7a;
 }
 
 .breadcrumbs a {
@@ -1600,6 +1605,10 @@ a.social__item.insta__footer-soc {
 
 
 /* catalog */
+
+.catalog__page-title h1 {
+    color: #fff;
+}
 
 .topbar__page {
     margin-bottom: 45px;
@@ -2090,7 +2099,8 @@ section.product-page__section {
 }
 
 span.title__article {
-    color: #939393;
+    color: #353535;
+    font-weight: 500;
     font-size: 16px;
 }
 

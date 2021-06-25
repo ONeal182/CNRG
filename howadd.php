@@ -1,4 +1,7 @@
-<? include 'header.php'; ?>
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
+?>
 <main>
 
     <div class="breadcrumbs">
@@ -37,7 +40,7 @@
                             <li> Оплатите счёт в течение 3 рабочих дней. </li>
                             <li> Все расчеты действительны в течении 15 дней </li>
                         </ul>
-                        <a href="/howpay.php" class="button bg-blue-1">Подробнее </a>
+                      
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">
@@ -74,7 +77,7 @@
                             </div>
 
                         </div>
-                        <a href="/howpay.php" class="button bg-blue-1">Подробнее </a>
+                       
                     </div>
                 </div>
                 <div class="col-lg-12">
