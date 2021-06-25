@@ -1,3 +1,7 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
+?>
 <? include 'header.php'; ?>
 
     <main>
@@ -903,6 +907,7 @@
       <div class="col-xl-8">
         <h2> Получите консультацию </h2>
         <p> Мы перезвоним и подробно ответим на все вопросы. Подберём решение под ваш бюджет </p>
+
         <form class="form foz2__form">
           <input type="text" class="input input__style-2" placeholder="Имя">
           <input type="text" class="input input__style-2" placeholder="+7 (___)-___-__">
@@ -1019,6 +1024,8 @@
   <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A161c938017d5229b07b33b3cf9f70675227807bc4085e3aecd26b3903fc5f2dc&amp;width=100%25&amp;height=657&amp;lang=ru_RU&amp;scroll=true"></script>
 </div>
 </section>
+
  <? include 'footer.php'; ?>
+ <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
 </body>
 </html>
