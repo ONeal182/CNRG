@@ -1123,6 +1123,17 @@ section.foz__section {
     content: '';
 }
 
+.modal#foz form,
+.modal#callme form {
+    width: 100%;
+}
+
+.modal#foz form input,
+.modal#callme form input {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
 
 /* Portfolio */
 
@@ -2876,7 +2887,6 @@ section.hits__section {
     border-top: 1px solid #eee;
     padding: 85px 0px;
 }
-
 
 .hits__section .title-with-arrow {
     margin-bottom: 25px;
