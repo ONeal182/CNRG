@@ -56,33 +56,35 @@ $curPage = $APPLICATION->GetCurPage(true);
 			<div class="row align-items-center header__first-section">
 				<div class="col-lg-1 col order-lg-1 order-3 text-center">
 					<a href="/">
-					<? $APPLICATION->IncludeComponent(
-								"bitrix:main.include",
-								"",
-								array(
-									"AREA_FILE_SHOW" => "file",
-									"PATH" => SITE_DIR . "include/company_logo.php"
-								),
-								false
-							); ?>
-							</a>
+						<? $APPLICATION->IncludeComponent(
+							"bitrix:main.include",
+							"",
+							array(
+								"AREA_FILE_SHOW" => "file",
+								"PATH" => SITE_DIR . "include/company_logo.php"
+							),
+							false
+						); ?>
+					</a>
 				</div>
 				<div class="col-auto col-lg-1 col-xl-6 order-lg-2 order-4 text-end">
 					<nav class="header__navbar d-xl-block d-none">
-					<? $APPLICATION->IncludeComponent(
+					<ul>
+						<? $APPLICATION->IncludeComponent(
 							"bitrix:menu",
-							"bottom_menu",
+							"header_first-menu",
 							array(
-								"ROOT_MENU_TYPE" => "bottom",
-								"MAX_LEVEL" => "1",
-								"MENU_CACHE_TYPE" => "A",
+								"ROOT_MENU_TYPE" => "bottom",	// Тип меню для первого уровня
+								"MAX_LEVEL" => "1",	// Уровень вложенности меню
+								"MENU_CACHE_TYPE" => "A",	// Тип кеширования
 								"CACHE_SELECTED_ITEMS" => "N",
-								"MENU_CACHE_TIME" => "36000000",
-								"MENU_CACHE_USE_GROUPS" => "Y",
-								"MENU_CACHE_GET_VARS" => array(),
+								"MENU_CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+								"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+								"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
 							),
 							false
-						);?>
+						); ?>
+						</ul>
 					</nav>
 					<div class="header__navbar-mobile d-xl-none d-block">
 						<ul>
@@ -91,12 +93,20 @@ $curPage = $APPLICATION->GetCurPage(true);
 									<img src="/assets/img/icons/mobilemenu.svg">
 								</a>
 								<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown" style="">
-									<li><a class="dropdown-item" href="#"> Нанесение логотипа</a></li>
-									<li><a class="dropdown-item" href="#"> Как заказать</a></li>
-									<li><a class="dropdown-item" href="#"> Оплата </a></li>
-									<li><a class="dropdown-item" href="#"> Доставка </a></li>
-									<li><a class="dropdown-item" href="#"> О нас </a></li>
-									<li><a class="dropdown-item" href="#"> Контакты </a></li>
+								<? $APPLICATION->IncludeComponent(
+							"bitrix:menu",
+							"header_first-menu",
+							array(
+								"ROOT_MENU_TYPE" => "bottom",	// Тип меню для первого уровня
+								"MAX_LEVEL" => "1",	// Уровень вложенности меню
+								"MENU_CACHE_TYPE" => "A",	// Тип кеширования
+								"CACHE_SELECTED_ITEMS" => "N",
+								"MENU_CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+								"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+								"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+							),
+							false
+						); ?>
 								</ul>
 							</li>
 						</ul>
@@ -106,29 +116,29 @@ $curPage = $APPLICATION->GetCurPage(true);
 				<div class="offset-xl-0 offset-lg-4 col-5 col-xl-4 d-lg-block d-none order-4">
 					<div class="header__contacts">
 						<div class="contacts__phone">
-							
-								<? $APPLICATION->IncludeComponent(
-									"bitrix:main.include",
-									"",
-									array(
-										"AREA_FILE_SHOW" => "file",
-										"PATH" => SITE_DIR . "include/telephone.php"
-									),
-									false
-								); ?>
-							
+
+							<? $APPLICATION->IncludeComponent(
+								"bitrix:main.include",
+								"",
+								array(
+									"AREA_FILE_SHOW" => "file",
+									"PATH" => SITE_DIR . "include/telephone.php"
+								),
+								false
+							); ?>
+
 							<a href="#" class="link" data-bs-toggle="modal" data-bs-target="#callme"> Перезвоните мне </a>
 						</div>
 						<div class="contacts__email">
-						<? $APPLICATION->IncludeComponent(
-									"bitrix:main.include",
-									"",
-									array(
-										"AREA_FILE_SHOW" => "file",
-										"PATH" => SITE_DIR . "include/email.php"
-									),
-									false
-								); ?>
+							<? $APPLICATION->IncludeComponent(
+								"bitrix:main.include",
+								"",
+								array(
+									"AREA_FILE_SHOW" => "file",
+									"PATH" => SITE_DIR . "include/email.php"
+								),
+								false
+							); ?>
 							<span>
 								<? $APPLICATION->IncludeComponent(
 									"bitrix:main.include",
@@ -361,34 +371,37 @@ $curPage = $APPLICATION->GetCurPage(true);
 				<div class="col-lg-9 col-auto order-lg-4 order-sm-2 ps-sm-0 mt-lg-4">
 					<div class="header__search">
 						<div class="search__overlay">
-							
-							<? $APPLICATION->IncludeComponent("bitrix:search.title", "search_header", Array(
-	"NUM_CATEGORIES" => "1",	// Количество категорий поиска
-		"TOP_COUNT" => "5",	// Количество результатов в каждой категории
-		"CHECK_DATES" => "N",	// Искать только в активных по дате документах
-		"SHOW_OTHERS" => "N",	// Показывать категорию "прочее"
-		"PAGE" => SITE_DIR."catalog/",	// Страница выдачи результатов поиска (доступен макрос #SITE_DIR#)
-		"CATEGORY_0_TITLE" => GetMessage("SEARCH_GOODS"),	// Название категории
-		"CATEGORY_0" => array(	// Ограничение области поиска
-			0 => "iblock_catalog",
-		),
-		"CATEGORY_0_iblock_catalog" => array(	// Искать в информационных блоках типа "iblock_catalog"
-			0 => "all",
-		),
-		"CATEGORY_OTHERS_TITLE" => GetMessage("SEARCH_OTHER"),
-		"SHOW_INPUT" => "Y",	// Показывать форму ввода поискового запроса
-		"INPUT_ID" => "title-search-input",	// ID строки ввода поискового запроса
-		"CONTAINER_ID" => "search",	// ID контейнера, по ширине которого будут выводиться результаты
-		"PRICE_CODE" => array(	// Тип цены
-			0 => "BASE",
-		),
-		"SHOW_PREVIEW" => "Y",	// Показать картинку
-		"PREVIEW_WIDTH" => "75",	// Ширина картинки
-		"PREVIEW_HEIGHT" => "75",	// Высота картинки
-		"CONVERT_CURRENCY" => "Y",	// Показывать цены в одной валюте
-	),
-	false
-); ?>
+
+							<? $APPLICATION->IncludeComponent(
+								"bitrix:search.title",
+								"search_header",
+								array(
+									"NUM_CATEGORIES" => "1",	// Количество категорий поиска
+									"TOP_COUNT" => "5",	// Количество результатов в каждой категории
+									"CHECK_DATES" => "N",	// Искать только в активных по дате документах
+									"SHOW_OTHERS" => "N",	// Показывать категорию "прочее"
+									"PAGE" => SITE_DIR . "catalog/",	// Страница выдачи результатов поиска (доступен макрос #SITE_DIR#)
+									"CATEGORY_0_TITLE" => GetMessage("SEARCH_GOODS"),	// Название категории
+									"CATEGORY_0" => array(	// Ограничение области поиска
+										0 => "iblock_catalog",
+									),
+									"CATEGORY_0_iblock_catalog" => array(	// Искать в информационных блоках типа "iblock_catalog"
+										0 => "all",
+									),
+									"CATEGORY_OTHERS_TITLE" => GetMessage("SEARCH_OTHER"),
+									"SHOW_INPUT" => "Y",	// Показывать форму ввода поискового запроса
+									"INPUT_ID" => "title-search-input",	// ID строки ввода поискового запроса
+									"CONTAINER_ID" => "search",	// ID контейнера, по ширине которого будут выводиться результаты
+									"PRICE_CODE" => array(	// Тип цены
+										0 => "BASE",
+									),
+									"SHOW_PREVIEW" => "Y",	// Показать картинку
+									"PREVIEW_WIDTH" => "75",	// Ширина картинки
+									"PREVIEW_HEIGHT" => "75",	// Высота картинки
+									"CONVERT_CURRENCY" => "Y",	// Показывать цены в одной валюте
+								),
+								false
+							); ?>
 						</div>
 					</div>
 					<div class="header__search-mobile hidden">
@@ -414,7 +427,7 @@ $curPage = $APPLICATION->GetCurPage(true);
 				</div>
 			</div>
 		</div>
-	</header>	
+	</header>
 
 	<div class="sticky__module">
 		<div class="sticky__module-items">
@@ -431,121 +444,119 @@ $curPage = $APPLICATION->GetCurPage(true);
 	</div>
 
 
-		<div class="modal fade" id="callme" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog  modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Оставьте контактные данные <span> Наш менеджер свяжется с вами в ближайшее время </span></h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<? $APPLICATION->IncludeComponent(
-							"bitrix:form",
-							"consultation_form",
-							array(
-								"AJAX_MODE" => "Y",
-								"AJAX_OPTION_ADDITIONAL" => "",
-								"AJAX_OPTION_HISTORY" => "N",
-								"AJAX_OPTION_JUMP" => "N",
-								"AJAX_OPTION_STYLE" => "Y",
-								"CACHE_TIME" => "3600",
-								"CACHE_TYPE" => "A",
-								"CHAIN_ITEM_LINK" => "",
-								"CHAIN_ITEM_TEXT" => "",
-								"COMPONENT_TEMPLATE" => "consultation_form",
-								"EDIT_ADDITIONAL" => "N",
-								"EDIT_STATUS" => "N",
-								"IGNORE_CUSTOM_TEMPLATE" => "N",
-								"NAME_TEMPLATE" => "",
-								"NOT_SHOW_FILTER" => array(
-									0 => "",
-									1 => "",
-								),
-								"NOT_SHOW_TABLE" => array(
-									0 => "",
-									1 => "",
-								),
-								"RESULT_ID" => $_REQUEST[RESULT_ID],
-								"SEF_MODE" => "N",
-								"SHOW_ADDITIONAL" => "N",
-								"SHOW_ANSWER_VALUE" => "N",
-								"SHOW_EDIT_PAGE" => "N",
-								"SHOW_LIST_PAGE" => "N",
-								"SHOW_STATUS" => "N",
-								"SHOW_VIEW_PAGE" => "N",
-								"START_PAGE" => "new",
-								"SUCCESS_URL" => "",
-								"USE_EXTENDED_ERRORS" => "N",
-								"WEB_FORM_ID" => "3",
-								"VARIABLE_ALIASES" => array(
-									"action" => "action",
-								)
-							),
-							false
-						); ?>
-					</div>
-
+	<div class="modal fade" id="callme" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog  modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Оставьте контактные данные <span> Наш менеджер свяжется с вами в ближайшее время </span></h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
+				<div class="modal-body">
+					<? $APPLICATION->IncludeComponent(
+						"bitrix:form",
+						"consultation_form",
+						array(
+							"AJAX_MODE" => "Y",
+							"AJAX_OPTION_ADDITIONAL" => "",
+							"AJAX_OPTION_HISTORY" => "N",
+							"AJAX_OPTION_JUMP" => "N",
+							"AJAX_OPTION_STYLE" => "Y",
+							"CACHE_TIME" => "3600",
+							"CACHE_TYPE" => "A",
+							"CHAIN_ITEM_LINK" => "",
+							"CHAIN_ITEM_TEXT" => "",
+							"COMPONENT_TEMPLATE" => "consultation_form",
+							"EDIT_ADDITIONAL" => "N",
+							"EDIT_STATUS" => "N",
+							"IGNORE_CUSTOM_TEMPLATE" => "N",
+							"NAME_TEMPLATE" => "",
+							"NOT_SHOW_FILTER" => array(
+								0 => "",
+								1 => "",
+							),
+							"NOT_SHOW_TABLE" => array(
+								0 => "",
+								1 => "",
+							),
+							"RESULT_ID" => $_REQUEST[RESULT_ID],
+							"SEF_MODE" => "N",
+							"SHOW_ADDITIONAL" => "N",
+							"SHOW_ANSWER_VALUE" => "N",
+							"SHOW_EDIT_PAGE" => "N",
+							"SHOW_LIST_PAGE" => "N",
+							"SHOW_STATUS" => "N",
+							"SHOW_VIEW_PAGE" => "N",
+							"START_PAGE" => "new",
+							"SUCCESS_URL" => "",
+							"USE_EXTENDED_ERRORS" => "N",
+							"WEB_FORM_ID" => "3",
+							"VARIABLE_ALIASES" => array(
+								"action" => "action",
+							)
+						),
+						false
+					); ?>
+				</div>
+
 			</div>
 		</div>
+	</div>
 
 
-		<div class="modal fade" id="foz" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog  modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Оставьте контактные данные <span> Наш менеджер свяжется с вами в ближайшее время </span></h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<? $APPLICATION->IncludeComponent(
-							"bitrix:form",
-							"consultation_form",
-							array(
-								"AJAX_MODE" => "Y",
-								"AJAX_OPTION_ADDITIONAL" => "",
-								"AJAX_OPTION_HISTORY" => "N",
-								"AJAX_OPTION_JUMP" => "N",
-								"AJAX_OPTION_STYLE" => "Y",
-								"CACHE_TIME" => "3600",
-								"CACHE_TYPE" => "A",
-								"CHAIN_ITEM_LINK" => "",
-								"CHAIN_ITEM_TEXT" => "",
-								"COMPONENT_TEMPLATE" => "consultation_form",
-								"EDIT_ADDITIONAL" => "N",
-								"EDIT_STATUS" => "N",
-								"IGNORE_CUSTOM_TEMPLATE" => "N",
-								"NAME_TEMPLATE" => "",
-								"NOT_SHOW_FILTER" => array(
-									0 => "",
-									1 => "",
-								),
-								"NOT_SHOW_TABLE" => array(
-									0 => "",
-									1 => "",
-								),
-								"RESULT_ID" => $_REQUEST[RESULT_ID],
-								"SEF_MODE" => "N",
-								"SHOW_ADDITIONAL" => "N",
-								"SHOW_ANSWER_VALUE" => "N",
-								"SHOW_EDIT_PAGE" => "N",
-								"SHOW_LIST_PAGE" => "N",
-								"SHOW_STATUS" => "N",
-								"SHOW_VIEW_PAGE" => "N",
-								"START_PAGE" => "new",
-								"SUCCESS_URL" => "",
-								"USE_EXTENDED_ERRORS" => "N",
-								"WEB_FORM_ID" => "2",
-								"VARIABLE_ALIASES" => array(
-									"action" => "action",
-								)
-							),
-							false
-						); ?>
-					</div>
-
+	<div class="modal fade" id="foz" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog  modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Оставьте контактные данные <span> Наш менеджер свяжется с вами в ближайшее время </span></h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
+				<div class="modal-body">
+					<? $APPLICATION->IncludeComponent(
+						"bitrix:form",
+						"consultation_form",
+						array(
+							"AJAX_MODE" => "Y",
+							"AJAX_OPTION_ADDITIONAL" => "",
+							"AJAX_OPTION_HISTORY" => "N",
+							"AJAX_OPTION_JUMP" => "N",
+							"AJAX_OPTION_STYLE" => "Y",
+							"CACHE_TIME" => "3600",
+							"CACHE_TYPE" => "A",
+							"CHAIN_ITEM_LINK" => "",
+							"CHAIN_ITEM_TEXT" => "",
+							"COMPONENT_TEMPLATE" => "consultation_form",
+							"EDIT_ADDITIONAL" => "N",
+							"EDIT_STATUS" => "N",
+							"IGNORE_CUSTOM_TEMPLATE" => "N",
+							"NAME_TEMPLATE" => "",
+							"NOT_SHOW_FILTER" => array(
+								0 => "",
+								1 => "",
+							),
+							"NOT_SHOW_TABLE" => array(
+								0 => "",
+								1 => "",
+							),
+							"RESULT_ID" => $_REQUEST[RESULT_ID],
+							"SEF_MODE" => "N",
+							"SHOW_ADDITIONAL" => "N",
+							"SHOW_ANSWER_VALUE" => "N",
+							"SHOW_EDIT_PAGE" => "N",
+							"SHOW_LIST_PAGE" => "N",
+							"SHOW_STATUS" => "N",
+							"SHOW_VIEW_PAGE" => "N",
+							"START_PAGE" => "new",
+							"SUCCESS_URL" => "",
+							"USE_EXTENDED_ERRORS" => "N",
+							"WEB_FORM_ID" => "2",
+							"VARIABLE_ALIASES" => array(
+								"action" => "action",
+							)
+						),
+						false
+					); ?>
+				</div>
+
 			</div>
 		</div>
-
-  
+	</div>

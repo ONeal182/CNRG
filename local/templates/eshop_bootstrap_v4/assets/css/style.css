@@ -553,6 +553,15 @@ a.link:hover,
     margin-bottom: 0px;
 }
 
+.header__navbar-mobile .dropdown-menu li {
+    padding: 5px 10px;
+}
+
+.header__navbar-mobile .dropdown-menu li a {
+    text-decoration: none;
+    color: #000;
+}
+
 .header__navbar-mobile .dropdown-toggle::after {
     content: '';
     display: none;
