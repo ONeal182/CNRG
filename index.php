@@ -682,7 +682,7 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
       </div>
     </div>
     <div class="col-12 foz__button"> 
-      <button class="button bg-gray" data-bs-toggle="modal" data-bs-target="#callme">Оставить заявку и получить все бонусы</button>
+      <button class="button bg-gray" data-bs-toggle="modal" data-bs-target="#foz">Оставить заявку и получить все бонусы</button>
     </div>
   </div>
 </div>
