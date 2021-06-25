@@ -951,7 +951,6 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 	),
 	false
 );?>
-     
       </div>
     </div>
   </div>
