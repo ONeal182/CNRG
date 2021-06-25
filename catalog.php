@@ -1,4 +1,7 @@
-<? include 'header.php'; ?>
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
+?>
 <main>
 
     <div class="breadcrumbs">
@@ -9,7 +12,7 @@
         <div class="title-topbar"><h1> Каталог </h1></div>
       </div>
     </section> -->
-    <section class="catalog__page-block">
+    <section class="catalog__page-block catalog__page-title">
       <div class="container">
        <div class="title-topbar"><h1> Каталог </h1></div>
        <div class="row g-0 catalog__list">
