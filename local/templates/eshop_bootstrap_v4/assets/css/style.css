@@ -912,6 +912,7 @@ li.nav-item {
     color: #255FAF;
     margin-top: 15px;
     margin-bottom: 15px;
+    text-decoration: none;
 }
 
 .card-atribute__item {
