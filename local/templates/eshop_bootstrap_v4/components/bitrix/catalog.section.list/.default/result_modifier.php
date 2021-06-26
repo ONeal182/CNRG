@@ -1,6 +1,23 @@
 <?
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 
+foreach ($arResult['SECTIONS'] as &$arSection) {
+	$rsParentSection = CIBlockSection::GetByID($arSection["ID"]);
+	if ($arParentSection = $rsParentSection->GetNext())
+	{
+		$arFilter = array('IBLOCK_ID' => $arParentSection['IBLOCK_ID'],'>LEFT_MARGIN' => $arParentSection['LEFT_MARGIN'],'<RIGHT_MARGIN' => $arParentSection['RIGHT_MARGIN'],'>DEPTH_LEVEL' => $arParentSection['DEPTH_LEVEL'], 'ACTIVE' => 'Y');
+		$rsSect = CIBlockSection::GetList(array('left_margin' => 'asc'),$arFilter);
+		while ($arSect = $rsSect->GetNext())
+		{
+			$arSection['SUBS'][] = $arSect;
+		}
+	}
+}
+
+
+
+
+/* default */
 $arViewModeList = array('LIST', 'LINE', 'TEXT', 'TILE');
 
 $columnCountList = array('1', '2', '3', '4', '6', '12');
