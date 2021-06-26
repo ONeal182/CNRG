@@ -4,15 +4,6 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Каталог"); ?>
 
 <?$APPLICATION->IncludeComponent(
-	"bitrix:breadcrumb",
-	".default",
-	Array(
-		"PATH" => "",
-		"SITE_ID" => "s1",
-		"START_FROM" => "0"
-	)
-);?>
-<?$APPLICATION->IncludeComponent(
 	"bitrix:catalog",
 	"bootstrap_v4",
 	Array(

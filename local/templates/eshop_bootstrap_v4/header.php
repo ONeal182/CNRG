@@ -10,6 +10,7 @@ if (isset($_GET["theme"]) && in_array($_GET["theme"], array("blue", "green", "ye
 $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "green", SITE_ID);
 
 $curPage = $APPLICATION->GetCurPage(true);
+$isMain = $APPLICATION->GetCurPage(false) === '/';
 
 ?>
 <!DOCTYPE html>
@@ -560,3 +561,15 @@ $curPage = $APPLICATION->GetCurPage(true);
 			</div>
 		</div>
 	</div>
+
+  <?php if (!$isMain) { ?>
+    <?$APPLICATION->IncludeComponent(
+      "bitrix:breadcrumb",
+      ".default",
+      Array(
+        "PATH" => "",
+        "SITE_ID" => "s1",
+        "START_FROM" => "0"
+      )
+    );?>
+  <?php } ?>
