@@ -86,7 +86,11 @@ if (!empty($arResult['ITEMS']))
                   </div>
                   <div class="proudct__card-cart">
                     <div class="product__card-price"> От <?= intval($item['MIN_PRICE']) ?> ₽ </div>
-                    <div class="product__card-button"> <button class="button bg-blue-1"><img src="<?= SITE_TEMPLATE_PATH?>/assets/img/icons/cart-button.svg"> В корзину </button> </div>
+                    <div class="product__card-button">
+                      <button class="button bg-blue-1 jsAddToCart" data-offer-id="<?= $item['OFFERS'][0]['ID'] ?>">
+                        <img src="<?= SITE_TEMPLATE_PATH?>/assets/img/icons/cart-button.svg"> В корзину
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
