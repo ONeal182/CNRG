@@ -80,6 +80,86 @@
 			</div>
 		</div>
 	</div>
+  <div class="row g-3 category__product-list">
+    <div class="product product__card col-lg-4 col-sm-6">
+      <div class="product__card-overlay">
+        <div class="product__img-gallery">
+          <div class="product__img-thumbs">
+            <div class="img-thumbs" data-img="/assets/img/demo/demo-product-1.jpg" style="background-image: url(/assets/img/demo/demo-product-1.jpg);"> </div>
+            <div class="img-thumbs" data-img="/assets/img/demo/demo-product-2.jpg" style="background-image: url(/assets/img/demo/demo-product-2.jpg);"> </div>
+            <div class="img-thumbs" data-img="/assets/img/demo/demo-product-3.jpg" style="background-image: url(/assets/img/demo/demo-product-3.jpg);"> </div>
+            <div class="img-thumbs" data-img="/assets/img/demo/demo-product-4.jpg" style="background-image: url(/assets/img/demo/demo-product-4.jpg);"> </div>
+          </div>
+          <div class="product__img-grand">
+            <div class="img-grand" style="background-image: url(/assets/img/demo/demo-product.jpg)">
+            </div>
+          </div>
+        </div>
+        <div class="product__card-title"> Свитшот женский Kulonga Raeglan Bicolor, серый меланж с черным </div>
+        <div class="proudct__card-atribute">
+          <div class="card-atribute__item"> Артикул: 31138.31 </div>
+          <div class="card-atribute__item"> Всего доступно: 51 </div>
+          <div class="card-atribute__item"> Бренд: Unit </div>
+        </div>
+        <div class="proudct__card-cart">
+          <div class="product__card-price"> От 23 948 ₽ </div>
+          <div class="product__card-button"> <button class="button bg-blue-1"><img src="assets/img/icons/cart-button.svg"> В корзину </button> </div>
+        </div>
+      </div>
+    </div>
+    <div class="product product__card col-lg-4 col-sm-6">
+      <div class="product__card-overlay">
+        <div class="product__img-gallery">
+          <div class="product__img-thumbs">
+            <div class="img-thumbs" data-img="/assets/img/demo/demo-product-1.jpg" style="background-image: url(/assets/img/demo/demo-product-1.jpg);"> </div>
+            <div class="img-thumbs" data-img="/assets/img/demo/demo-product-2.jpg" style="background-image: url(/assets/img/demo/demo-product-2.jpg);"> </div>
+            <div class="img-thumbs" data-img="/assets/img/demo/demo-product-3.jpg" style="background-image: url(/assets/img/demo/demo-product-3.jpg);"> </div>
+            <div class="img-thumbs" data-img="/assets/img/demo/demo-product-4.jpg" style="background-image: url(/assets/img/demo/demo-product-4.jpg);"> </div>
+          </div>
+          <div class="product__img-grand">
+            <div class="img-grand" style="background-image: url(/assets/img/demo/demo-product.jpg)">
+            </div>
+          </div>
+        </div>
+        <div class="product__card-title"> Свитшот женский Kulonga Raeglan Bicolor, серый меланж с черным </div>
+        <div class="proudct__card-atribute">
+          <div class="card-atribute__item"> Артикул: 31138.31 </div>
+          <div class="card-atribute__item"> Всего доступно: 51 </div>
+          <div class="card-atribute__item"> Бренд: Unit </div>
+        </div>
+        <div class="proudct__card-cart">
+          <div class="product__card-price"> От 23 948 ₽ </div>
+          <div class="product__card-button"> <button class="button bg-blue-1"><img src="assets/img/icons/cart-button.svg"> В корзину </button> </div>
+        </div>
+      </div>
+    </div>
+    <div class="product product__card col-lg-4 col-sm-6">
+      <div class="product__card-overlay">
+        <div class="product__img-gallery">
+          <div class="product__img-thumbs">
+            <div class="img-thumbs" data-img="/assets/img/demo/demo-product-1.jpg" style="background-image: url(/assets/img/demo/demo-product-1.jpg);"> </div>
+            <div class="img-thumbs" data-img="/assets/img/demo/demo-product-2.jpg" style="background-image: url(/assets/img/demo/demo-product-2.jpg);"> </div>
+            <div class="img-thumbs" data-img="/assets/img/demo/demo-product-3.jpg" style="background-image: url(/assets/img/demo/demo-product-3.jpg);"> </div>
+            <div class="img-thumbs" data-img="/assets/img/demo/demo-product-4.jpg" style="background-image: url(/assets/img/demo/demo-product-4.jpg);"> </div>
+          </div>
+          <div class="product__img-grand">
+            <div class="img-grand" style="background-image: url(/assets/img/demo/demo-product.jpg)">
+            </div>
+          </div>
+        </div>
+        <div class="product__card-title"> Свитшот женский Kulonga Raeglan Bicolor, серый меланж с черным </div>
+        <div class="proudct__card-atribute">
+          <div class="card-atribute__item"> Артикул: 31138.31 </div>
+          <div class="card-atribute__item"> Всего доступно: 51 </div>
+          <div class="card-atribute__item"> Бренд: Unit </div>
+        </div>
+        <div class="proudct__card-cart">
+          <div class="product__card-price"> От 23 948 ₽ </div>
+          <div class="product__card-button"> <button class="button bg-blue-1"><img src="assets/img/icons/cart-button.svg"> В корзину </button> </div>
+        </div>
+      </div>
+    </div>
+  </div>
 	<div class="pagination__block">
 		<a href="#" class="pagination__showmore"> Загрузить еще </a>
 		<div class="pagination__page">
@@ -89,7 +169,7 @@
 		</div>
 	</div>
 
-<?php $intSectionID = $APPLICATION->IncludeComponent("bitrix:catalog.section", "bootstrap_v4", array(
+<?php $intSectionID = $APPLICATION->IncludeComponent("bitrix:catalog.section", "product-list", array(
 	"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 	"IBLOCK_ID" => $arParams["IBLOCK_ID"],
 	"ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],

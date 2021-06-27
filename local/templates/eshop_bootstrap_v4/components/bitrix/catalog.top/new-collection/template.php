@@ -13,6 +13,47 @@
 
 $this->setFrameMode(true);
 
+$generalParams = array(
+	'HIDE_PROPERTIES' => 'Y',
+	'SHOW_DISCOUNT_PERCENT' => $arParams['SHOW_DISCOUNT_PERCENT'],
+	'PRODUCT_DISPLAY_MODE' => $arParams['PRODUCT_DISPLAY_MODE'],
+	'SHOW_MAX_QUANTITY' => $arParams['SHOW_MAX_QUANTITY'],
+	'RELATIVE_QUANTITY_FACTOR' => $arParams['RELATIVE_QUANTITY_FACTOR'],
+	'MESS_SHOW_MAX_QUANTITY' => $arParams['~MESS_SHOW_MAX_QUANTITY'],
+	'MESS_RELATIVE_QUANTITY_MANY' => $arParams['~MESS_RELATIVE_QUANTITY_MANY'],
+	'MESS_RELATIVE_QUANTITY_FEW' => $arParams['~MESS_RELATIVE_QUANTITY_FEW'],
+	'SHOW_OLD_PRICE' => $arParams['SHOW_OLD_PRICE'],
+	'USE_PRODUCT_QUANTITY' => $arParams['USE_PRODUCT_QUANTITY'],
+	'PRODUCT_QUANTITY_VARIABLE' => $arParams['PRODUCT_QUANTITY_VARIABLE'],
+	'ADD_TO_BASKET_ACTION' => $arParams['ADD_TO_BASKET_ACTION'],
+	'ADD_PROPERTIES_TO_BASKET' => $arParams['ADD_PROPERTIES_TO_BASKET'],
+	'PRODUCT_PROPS_VARIABLE' => $arParams['PRODUCT_PROPS_VARIABLE'],
+	'SHOW_CLOSE_POPUP' => $arParams['SHOW_CLOSE_POPUP'],
+	'DISPLAY_COMPARE' => $arParams['DISPLAY_COMPARE'],
+	'COMPARE_PATH' => $arParams['COMPARE_PATH'],
+	'COMPARE_NAME' => $arParams['COMPARE_NAME'],
+	'PRODUCT_SUBSCRIPTION' => $arParams['PRODUCT_SUBSCRIPTION'],
+	'PRODUCT_BLOCKS_ORDER' => $arParams['PRODUCT_BLOCKS_ORDER'],
+	'LABEL_POSITION_CLASS' => $labelPositionClass,
+	'DISCOUNT_POSITION_CLASS' => $discountPositionClass,
+	'SLIDER_INTERVAL' => $arParams['SLIDER_INTERVAL'],
+	'SLIDER_PROGRESS' => $arParams['SLIDER_PROGRESS'],
+	'~BASKET_URL' => $arParams['~BASKET_URL'],
+	'~ADD_URL_TEMPLATE' => $arResult['~ADD_URL_TEMPLATE'],
+	'~BUY_URL_TEMPLATE' => $arResult['~BUY_URL_TEMPLATE'],
+	'~COMPARE_URL_TEMPLATE' => $arResult['~COMPARE_URL_TEMPLATE'],
+	'~COMPARE_DELETE_URL_TEMPLATE' => $arResult['~COMPARE_DELETE_URL_TEMPLATE'],
+	'TEMPLATE_THEME' => $arParams['TEMPLATE_THEME'],
+	'USE_ENHANCED_ECOMMERCE' => $arParams['USE_ENHANCED_ECOMMERCE'],
+	'DATA_LAYER_NAME' => $arParams['DATA_LAYER_NAME'],
+	'BRAND_PROPERTY' => $arParams['BRAND_PROPERTY'],
+	'MESS_BTN_BUY' => $arParams['~MESS_BTN_BUY'],
+	'MESS_BTN_DETAIL' => $arParams['~MESS_BTN_DETAIL'],
+	'MESS_BTN_COMPARE' => $arParams['~MESS_BTN_COMPARE'],
+	'MESS_BTN_SUBSCRIBE' => $arParams['~MESS_BTN_SUBSCRIBE'],
+	'MESS_BTN_ADD_TO_BASKET' => $arParams['~MESS_BTN_ADD_TO_BASKET'],
+	'MESS_NOT_AVAILABLE' => $arParams['~MESS_NOT_AVAILABLE'],
+);
 
 if (!empty($arResult['ITEMS']))
 {
@@ -61,39 +102,31 @@ if (!empty($arResult['ITEMS']))
 
         <div class="slider__product">
 			    <?php foreach ($arResult['ITEMS'][0] as $item) { ?>
-              <div class="product product__card ">
-                <div class="product__card-overlay">
-                  <div class="product__img-gallery">
-					            <?php if (count($item['PROPERTIES']['Izobrazheniya']['VALUE']) > 0) { ?>
-                        <div class="product__img-thumbs">
-							            <?php foreach ($item['PROPERTIES']['Izobrazheniya']['VALUE'] as $imgId) {
-								            $imgSrc = CFile::GetPath($imgId); ?>
-                              <div class="img-thumbs" data-img="<?= $imgSrc ?>"
-                                   style="background-image: url(<?= $imgSrc ?>);"> </div>
-							            <?php } ?>
-                        </div>
-					            <?php } ?>
-                    <div class="product__img-grand">
-                      <div class="img-grand" style="background-image: url(<?= $item['PREVIEW_PICTURE']["SRC"] ?>)">
-                      </div>
-                    </div>
-                  </div>
-                  <a href="<?= $item['DETAIL_PAGE_URL'] ?>" class="product__card-title"><?= $item["NAME"] ?></a>
-                  <div class="proudct__card-atribute">
-                    <div class="card-atribute__item"> Артикул: <?= $item['PROPERTIES']['WDI_ARTICLE']['VALUE'] ?> </div>
-                    <div class="card-atribute__item"> Всего доступно: <?= $item['COMMON_QUANTITY'] ?> </div>
-                    <div class="card-atribute__item"> Бренд: <?= $item['PROPERTIES']['WDI_BRADN_OSN']['VALUE'] ?> </div>
-                  </div>
-                  <div class="proudct__card-cart">
-                    <div class="product__card-price"> От <?= intval($item['MIN_PRICE']) ?> ₽ </div>
-                    <div class="product__card-button">
-                      <button class="button bg-blue-1 jsAddToCart" data-offer-id="<?= $item['OFFERS'][0]['ID'] ?>">
-                        <img src="<?= SITE_TEMPLATE_PATH?>/assets/img/icons/cart-button.svg"> В корзину
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <?php
+                $areaIds = array();
+                $uniqueId = $item['ID'].'_'.md5($this->randString().$component->getAction());
+                $areaIds[$item['ID']] = $this->GetEditAreaId($uniqueId);
+              ?>
+              <? $APPLICATION->IncludeComponent(
+                'bitrix:catalog.item',
+                'default-item',
+                array(
+                  'RESULT' => array(
+                    'ITEM' => $item,
+                    'USE_PRODUCT_QUANTITY' => 'Y',
+                    'AREA_ID' => $areaIds[$item['ID']],
+                    'TYPE' => 'card',
+                    'BIG_LABEL' => 'N',
+                    'BIG_DISCOUNT_PERCENT' => 'N',
+                    'BIG_BUTTONS' => 'Y',
+                    'SCALABLE' => 'N'
+                  ),
+                  'PARAMS' => $generalParams
+                    + array('SKU_PROPS' => $arResult['SKU_PROPS'][$item['IBLOCK_ID']])
+                ),
+                $component,
+                array('HIDE_ICONS' => 'Y')
+              ); ?>
 			<?php } ?>
 
         </div>

@@ -813,6 +813,11 @@ section.catalog-category__section {
     margin-bottom: 25px;
 }
 
+.product__card-price.old {
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
 .category__item button.button.bg-blue-1 {
     width: 100%;
 }
@@ -1849,6 +1854,10 @@ section.catalog__page-block {
 .category__subcategory ul {
     list-style: none;
     padding-left: 0px;
+}
+
+.category__product-list {
+    margin-bottom: 1rem;
 }
 
 .filter-item {

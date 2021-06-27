@@ -101,7 +101,7 @@ $APPLICATION->SetTitle("Каталог"); ?>
 		"LABEL_PROP" => array(),
 		"LABEL_PROP_MOBILE" => array(),
 		"LABEL_PROP_POSITION" => "top-left",
-		"LAZY_LOAD" => "N",
+		"LAZY_LOAD" => "Y",
 		"LINE_ELEMENT_COUNT" => "3",
 		"LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
 		"LINK_IBLOCK_ID" => "",
