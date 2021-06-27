@@ -912,6 +912,7 @@ li.nav-item {
     color: #255FAF;
     margin-top: 15px;
     margin-bottom: 15px;
+    text-decoration: none;
 }
 
 .card-atribute__item {
@@ -1779,14 +1780,14 @@ section.catalog__page-block {
     background-position: top +29% right -11%;
 }
 
-.catalog-list__overlay.category__ejednevnik .catalog-list__wrapper {
+.catalog-list__overlay.category__ezhednevniki-i-biznes-bloknoty .catalog-list__wrapper {
     background-image: url(/assets/img/catalog/ejednevnik.png);
     background-size: 160px;
     background-repeat: no-repeat;
     background-position: top +20% right -50%;
 }
 
-.catalog-list__overlay.category__podnabor .catalog-list__wrapper {
+.catalog-list__overlay.category__aromapodarki .catalog-list__wrapper {
     background-image: url(/assets/img/catalog/podnabor.png);
     background-size: 160px;
     background-repeat: no-repeat;
