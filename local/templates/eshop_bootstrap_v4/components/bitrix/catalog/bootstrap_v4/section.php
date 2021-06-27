@@ -60,8 +60,15 @@ if ($isFilter) {
 		}
 		$obCache->EndDataCache($arCurSection);
 	}
-	if (!isset($arCurSection))
+	if (!isset($arCurSection)) {
 		$arCurSection = array();
+	} else {
+		$res = CIBlockSection::GetByID($arCurSection["ID"]);
+		if($ar_res = $res->GetNext()) {
+			$arCurSection["NAME"] = $ar_res["~NAME"];
+		}
+	}
+
 }
 
 if ($isVerticalFilter)
