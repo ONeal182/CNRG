@@ -1568,35 +1568,23 @@ footer {
     color: #585858;
 }
 
-.social__footer-mobile {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-}
-
 .social__footer-mobile a.social__item {
     width: 100%;
     margin: 0px;
     text-align: center;
-    padding: 10px;
-}
-
-a.social__item.facebook__footer-soc {
-    background: #4D61A7;
-}
-
-a.social__item.vk-soc {
-    background: #3095F2;
-}
-
-a.social__item.insta__footer-soc {
-    background: #DA835D;
+    padding: 25px;
+    position: relative;
+    flex: 1;
 }
 
 .footer__logo-block p {
     color: #99D8F3;
     font-weight: 600;
     margin-top: 6px;
+}
+
+.footer__col-3 .menu__footer {
+    width: auto;
 }
 
 
