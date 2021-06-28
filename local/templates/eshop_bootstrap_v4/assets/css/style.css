@@ -813,6 +813,11 @@ section.catalog-category__section {
     margin-bottom: 25px;
 }
 
+.product__card-price.old {
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
 .category__item button.button.bg-blue-1 {
     width: 100%;
 }
@@ -912,6 +917,7 @@ li.nav-item {
     color: #255FAF;
     margin-top: 15px;
     margin-bottom: 15px;
+    text-decoration: none;
 }
 
 .card-atribute__item {
@@ -1681,6 +1687,8 @@ section.topbar__page.topbar__catalog {
     font-weight: 500;
     margin-top: 10px;
     color: #013F88;
+    display: block;
+    text-decoration: none;
 }
 
 section.catalog__page-block {
@@ -1767,14 +1775,14 @@ section.catalog__page-block {
     background-position: top +29% right -11%;
 }
 
-.catalog-list__overlay.category__ejednevnik .catalog-list__wrapper {
+.catalog-list__overlay.category__ezhednevniki-i-biznes-bloknoty .catalog-list__wrapper {
     background-image: url(/assets/img/catalog/ejednevnik.png);
     background-size: 160px;
     background-repeat: no-repeat;
     background-position: top +20% right -50%;
 }
 
-.catalog-list__overlay.category__podnabor .catalog-list__wrapper {
+.catalog-list__overlay.category__aromapodarki .catalog-list__wrapper {
     background-image: url(/assets/img/catalog/podnabor.png);
     background-size: 160px;
     background-repeat: no-repeat;
@@ -1836,6 +1844,10 @@ section.catalog__page-block {
 .category__subcategory ul {
     list-style: none;
     padding-left: 0px;
+}
+
+.category__product-list {
+    margin-bottom: 1rem;
 }
 
 .filter-item {
@@ -1957,8 +1969,8 @@ a.filter__product span {
     text-decoration: none;
 }
 
-.pagination__list-page a {
-    background: #F5F5F5;
+.pagination__list-page a,
+.pagination__list-page span {
     font-family: 'DIN Pro Cond';
     font-size: 20px;
     color: #3E3E3E;
@@ -1968,13 +1980,27 @@ a.filter__product span {
     justify-content: center;
     display: inline-flex;
     line-height: 42px;
+    margin: 0 0.2rem;
 }
 
-.pagination__next-page a {
+.pagination__list-page span {
+    width: 33px;
+}
+
+.pagination__list-page a {
+    background: #F5F5F5;
+}
+
+.pagination__next-page a,
+.pagination__prev-page a {
     color: #000;
     text-transform: uppercase;
     font-family: 'DIN Pro Cond';
     font-size: 20px;
+}
+
+.pagination__prev-page {
+    margin-right: 15px;
 }
 
 .pagination__next-page {
@@ -1994,6 +2020,7 @@ a.pagination__showmore {
     color: #013f88;
     text-decoration: none;
     font-size: 21px;
+    cursor: pointer;
 }
 
 .category__sorting {
