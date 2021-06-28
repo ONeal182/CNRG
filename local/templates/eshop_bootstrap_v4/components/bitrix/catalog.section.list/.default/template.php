@@ -42,15 +42,19 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
             </a>
             <?php if ($arSection['SUBS']) { ?>
               <div class="catalog-list__link">
+                <?php $showedSubsCount = 0; ?>
                 <?php foreach ($arSection['SUBS'] as $subSection) { ?>
-					        <a href="<?= $subSection["~SECTION_PAGE_URL"] ?>"><?= $subSection["NAME"] ?></a>
+                  <?php if (($subSection["DEPTH_LEVEL"] - $arSection["DEPTH_LEVEL"]) == 1) { ?>
+						          <?php $showedSubsCount++; ?>
+                      <a href="<?= $subSection["~SECTION_PAGE_URL"] ?>"><?= $subSection["NAME"] ?></a>
+                  <?php } ?>
                 <?php } ?>
               </div>
             <?php } ?>
           </div>
-          <?php if (count($arSection['SUBS']) > 4) { ?>
+          <?php if ($showedSubsCount > 4) { ?>
             <div class="catalog-list__showfull">
-              +<?= count($arSection['SUBS']) - 4 ?> категорий
+              +<?= $showedSubsCount - 4 ?> категорий
             </div>
           <?php } ?>
         </div>
