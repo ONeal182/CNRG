@@ -48,7 +48,7 @@ use \Bitrix\Main\Localization\Loc;
   </div>
   <div class="proudct__card-cart">
     <div class="product__card-price" data-entity="price-block">
-    <?php if ($arParams['SHOW_OLD_PRICE'] === 'Y' && $price['RATIO_PRICE'] < $price['RATIO_BASE_PRICE']) { ?>
+    <?php if ($arParams['SHOW_OLD_PRICE'] === 'Y' && $item['MIN_RATIO_PRICE'] < $item['MIN_BASE_PRICE']) { ?>
           <span class="product__card-price old" id="<?= $itemIds['PRICE_OLD'] ?>">
            <?= $item['MIN_RATIO_PRICE'] ?> ₽
         </span>

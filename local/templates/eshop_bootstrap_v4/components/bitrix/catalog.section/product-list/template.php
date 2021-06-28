@@ -166,35 +166,36 @@ if (!empty($arResult['ITEMS']) && !empty($arResult['ITEM_ROWS']))
   foreach ($arResult['ITEMS'] as $item) {
     $uniqueId = $item['ID'].'_'.md5($this->randString().$component->getAction());
     $areaIds[$item['ID']] = $this->GetEditAreaId($uniqueId);
-  }
-
-  foreach ($arResult['ITEM_ROWS'] as $rowData) {
-    $rowItems = array_splice($arResult['ITEMS'], 0, $rowData['COUNT']); ?>
-    <div class="row g-3 category__product-list <?=$rowData['CLASS']?>" data-entity="items-row">
-      <?php foreach ($rowItems as $item) { ?>
-        <? $APPLICATION->IncludeComponent(
-          'bitrix:catalog.item',
-          'default-item',
-          array(
-            'RESULT' => array(
-              'ITEM' => $item,
-              'USE_PRODUCT_QUANTITY' => 'Y',
-              'AREA_ID' => $areaIds[$item['ID']],
-              'TYPE' => 'card',
-              'BIG_LABEL' => 'N',
-              'BIG_DISCOUNT_PERCENT' => 'N',
-              'BIG_BUTTONS' => 'Y',
-              'SCALABLE' => 'N'
+  } ?>
+  <div data-entity="<?= $containerName ?>">
+    <?foreach ($arResult['ITEM_ROWS'] as $rowData) {
+      $rowItems = array_splice($arResult['ITEMS'], 0, $rowData['COUNT']); ?>
+        <div class="row g-3 category__product-list <?= $rowData['CLASS']?>" data-entity="items-row">
+        <?php foreach ($rowItems as $item) { ?>
+          <? $APPLICATION->IncludeComponent(
+            'bitrix:catalog.item',
+            'default-item',
+            array(
+              'RESULT' => array(
+                'ITEM' => $item,
+                'USE_PRODUCT_QUANTITY' => 'Y',
+                'AREA_ID' => $areaIds[$item['ID']],
+                'TYPE' => 'card',
+                'BIG_LABEL' => 'N',
+                'BIG_DISCOUNT_PERCENT' => 'N',
+                'BIG_BUTTONS' => 'Y',
+                'SCALABLE' => 'N'
+              ),
+              'PARAMS' => $generalParams
+                + array('SKU_PROPS' => $arResult['SKU_PROPS'][$item['IBLOCK_ID']])
             ),
-            'PARAMS' => $generalParams
-              + array('SKU_PROPS' => $arResult['SKU_PROPS'][$item['IBLOCK_ID']])
-          ),
-          $component,
-          array('HIDE_ICONS' => 'Y')
-        ); ?>
+            $component,
+            array('HIDE_ICONS' => 'Y')
+          ); ?>
         <?php } ?>
-    </div>
-    <? } ?>
+        </div>
+      <? } ?>
+  </div>
   <? unset($generalParams, $rowItems) ?>
 
 <?php }
@@ -212,36 +213,27 @@ else
 ?>
 <!-- items-container -->
 
-<? //region LazyLoad Button
-if ($showLazyLoad)
-{
-  ?>
-  <div class="text-center mb-4" data-entity="lazy-<?=$containerName?>">
-    <button type="button"
-        class="btn btn-primary btn-md"
-        style="margin: 15px;"
-        data-use="show-more-<?=$navParams['NavNum']?>">
-          <?=$arParams['MESS_BTN_LAZY_LOAD']?>
-    </button>
-  </div>
-  <?
-}
-//endregion
+<div class="pagination__block">
+	<?php if ($showLazyLoad) { ?>
+      <div data-entity="lazy-<?=$containerName?>">
+        <a class="pagination__showmore" data-use="show-more-<?=$navParams['NavNum']?>">
+			    <?=$arParams['MESS_BTN_LAZY_LOAD']?>
+        </a>
+      </div>
+	<?php } ?>
 
-//region Pagination
-if ($showBottomPager)
-{
-  ?>
-  <div class="row mb-4">
-    <div class="col text-center" data-pagination-num="<?=$navParams['NavNum']?>">
-      <!-- pagination-container -->
-      <?=$arResult['NAV_STRING']?>
-      <!-- pagination-container -->
-    </div>
-  </div>
-  <?
-}
-//endregion
+	<?php if ($showBottomPager) { ?>
+    <div class="pagination__page" data-pagination-num="<?=$navParams['NavNum']?>">
+        <!-- pagination-container -->
+		    <?=$arResult['NAV_STRING']?>
+        <!-- pagination-container -->
+      </div>
+	<?php } ?>
+</div>
+
+
+
+<?php
 
 $signer = new \Bitrix\Main\Security\Sign\Signer;
 $signedTemplate = $signer->sign($templateName, 'catalog.section');
