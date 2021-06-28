@@ -1699,6 +1699,8 @@ section.topbar__page.topbar__catalog {
     font-weight: 500;
     margin-top: 10px;
     color: #013F88;
+    display: block;
+    text-decoration: none;
 }
 
 section.catalog__page-block {
