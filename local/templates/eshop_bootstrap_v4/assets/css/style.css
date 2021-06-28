@@ -1383,8 +1383,12 @@ form.form.foz2__form {
 }
 
 .news__item .news__title {
-    font-size: 18px;
     margin-bottom: 10px;
+}
+
+.news__item .news__title a {
+    font-size: 18px;
+    text-decoration: none;
     font-weight: 500;
     color: #272727;
 }
@@ -1399,12 +1403,12 @@ section.news__section {
     padding: 80px 0px;
 }
 
-a.news__item {
+.news__item {
     padding: 5px;
     text-decoration: none!important;
 }
 
-a.news__item:hover .news__title {
+.news__item:hover .news__title {
     color: #013f88;
 }
 
