@@ -957,9 +957,9 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 </section>
 <section class="news__section">
   <div class="container">
-   <div class="title-with-arrow">
-    <h2> Новости  </h2>
-    <div class="slider__arrow">
+  <div class="title-with-arrow">
+	<h2> Новости </h2>
+   <div class="slider__arrow">
       <div class="slider__arrow-left">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M22.1724 25.1724L16.1724 19.1724L22.1724 13.1724" stroke="#255FAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -971,59 +971,80 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
         </svg>
       </div>
     </div>
-  </div>
-  <!--end row-->
-<? $APPLICATION->IncludeComponent(
-	"bitrix:main.include",
-	"",
+	</div>
+  <?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"news_homepage", 
 	array(
-		"AREA_FILE_SHOW" => "sect",
-		"AREA_FILE_SUFFIX" => "bottom",
-		"AREA_FILE_RECURSIVE" => "N",
-		"EDIT_MODE" => "html",
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => $_REQUEST["ID"],
+		"IBLOCK_TYPE" => "news",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"MEDIA_PROPERTY" => "",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"SEARCH_PAGE" => "/search/",
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SLIDER_PROPERTY" => "",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"TEMPLATE_THEME" => "blue",
+		"USE_RATING" => "N",
+		"USE_SHARE" => "N",
+		"COMPONENT_TEMPLATE" => "news_homepage"
 	),
-	false,
-	array('HIDE_ICONS' => 'Y')
-); ?>
+	false
+);?>
 
-  <div class="news__slider">
-    <a href="#" class="news__item">
-      <div class="news__img" style="background-image: url(/assets/img/demo/demonews.jpg)">
-      </div>
-      <div class="news__overlay">
-        <div class="news__meta"> <p> 10.01.2020 </p> <span>|</span> <p>Новости</p></div>
-        <div class="news__title"> Вниманию новых клиентов </div>
-        <p class="news__text"> Уважаемые клиенты! Доводим до вашего сведения, что мы работаем исключительно с юридическими лицами. Напоминаем, что все финансовые расчёты осуществляются нами на основании выставления счёта вашей организации. </p>
-      </div>
-    </a>
-    <a href="#" class="news__item">
-      <div class="news__img" style="background-image: url(/assets/img/demo/demonews.jpg)">
-      </div>
-      <div class="news__overlay">
-        <div class="news__meta"> <p> 10.01.2020 </p> <span>|</span> <p>Новости</p></div>
-        <div class="news__title"> Вниманию новых клиентов </div>
-        <p class="news__text"> Уважаемые клиенты! Доводим до вашего сведения, что мы работаем исключительно с юридическими лицами. Напоминаем, что все финансовые расчёты осуществляются нами на основании выставления счёта вашей организации. </p>
-      </div>
-    </a>
-    <a href="#" class="news__item">
-      <div class="news__img" style="background-image: url(/assets/img/demo/demonews.jpg)">
-      </div>
-      <div class="news__overlay">
-        <div class="news__meta"> <p> 10.01.2020 </p> <span>|</span> <p>Новости</p></div>
-        <div class="news__title"> Вниманию новых клиентов </div>
-        <p class="news__text"> Уважаемые клиенты! Доводим до вашего сведения, что мы работаем исключительно с юридическими лицами. Напоминаем, что все финансовые расчёты осуществляются нами на основании выставления счёта вашей организации. </p>
-      </div>
-    </a>
-    <a href="#" class="news__item">
-      <div class="news__img" style="background-image: url(/assets/img/demo/demonews.jpg)">
-      </div>
-      <div class="news__overlay">
-        <div class="news__meta"> <p> 10.01.2020 </p> <span>|</span> <p>Новости</p></div>
-        <div class="news__title"> Вниманию новых клиентов </div>
-        <p class="news__text"> Уважаемые клиенты! Доводим до вашего сведения, что мы работаем исключительно с юридическими лицами. Напоминаем, что все финансовые расчёты осуществляются нами на основании выставления счёта вашей организации. </p>
-      </div>
-    </a>
-  </div>
+
 </div>
 </section>
 <section class="map__section">
