@@ -972,6 +972,20 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
       </div>
     </div>
   </div>
+  <!--end row-->
+<? $APPLICATION->IncludeComponent(
+	"bitrix:main.include",
+	"",
+	array(
+		"AREA_FILE_SHOW" => "sect",
+		"AREA_FILE_SUFFIX" => "bottom",
+		"AREA_FILE_RECURSIVE" => "N",
+		"EDIT_MODE" => "html",
+	),
+	false,
+	array('HIDE_ICONS' => 'Y')
+); ?>
+
   <div class="news__slider">
     <a href="#" class="news__item">
       <div class="news__img" style="background-image: url(/assets/img/demo/demonews.jpg)">
