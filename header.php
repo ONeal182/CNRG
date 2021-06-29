@@ -7,14 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
   <!-- Bootstrap CSS -->
-  <link href="assets/fonts/fonts.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="<?= SITE_DIR ?>favicon.ico" />
+
+  <link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/css/multiple-select.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-  <link href="assets/css/slick.css" rel="stylesheet">
-  <link href="assets/css/slick-theme.css" rel="stylesheet">
-  <link href="assets/css/multiple-select.min.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/responsive.css" rel="stylesheet">
+  <link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/css/slick.css">
+  <link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/css/slick-theme.css">
+  <link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/fonts/fonts.css">
+  <link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/css/style.css">
+  <link rel="stylesheet" href="/local/templates/eshop_bootstrap_v4/assets/css/responsive.css">
   <title>CNRG</title>
 </head>
 
