@@ -90,7 +90,7 @@ $arTemplateParameters["FILTER_VIEW_MODE"] = array(
 	"NAME" => GetMessage('CPT_BC_FILTER_VIEW_MODE'),
 	"TYPE" => "LIST",
 	"VALUES" => $arFilterViewModeList,
-	"DEFAULT" => "VERTICAL",
+	"DEFAULT" => "HORIZONTAL",
 	"HIDDEN" => (!isset($arCurrentValues['USE_FILTER']) || 'N' == $arCurrentValues['USE_FILTER'] ? 'Y' : 'N')
 );
 $arTemplateParameters["FILTER_HIDE_ON_MOBILE"] = array(

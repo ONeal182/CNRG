@@ -15,16 +15,25 @@
 
 /*Sections*/
 
-.smart-filter-parameters-box { position: relative; }
+.smart-filter-parameters-box {
+	position: relative;
+	display: inline-block;
+}
 
 .smart-filter-parameters-box-title {
-	display: inline-block;
-	padding-bottom: 7px;
-	font-size: 13px;
+	height: 42px;
+	line-height: 38px;
+	border: 1px solid #eee;
+	text-align: center;
+	width: auto;
+	padding: 0 15px;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
 .smart-filter-parameters-box-title-text {
-	color: var(--primary);
+	color: #000;
+	font-size: 16px;
 	cursor: pointer;
 	transition: 250ms linear all;
 }
@@ -60,9 +69,9 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 5px;
-	height: 1px;
-	background-color: var(--primary);
+	width: 6px;
+	height: 2px;
+	background-color: #888;
 	content: "";
 	transition: all 250ms ease;
 	-webkit-transform-origin: center;
@@ -150,6 +159,15 @@
 	display: none;
 	box-sizing: content-box;
 	transition: padding .3s ease;
+	position: absolute;
+	background-color: white;
+	z-index: 73;
+	border: 0px;
+	border-radius: 0px 0px 10px 10px;
+	box-shadow: 0px 5px 25px -10px rgb(0 0 0 / 10%);
+	border-top: 1px solid #eee;
+	padding: 15px;
+	min-width: 170px;
 }
 
 .smart-filter-button-box .smart-filter-block,
@@ -689,7 +707,7 @@
 }
 
 /*
-*	BTN result and reset 
+*	BTN result and reset
 *
 */
 
@@ -708,6 +726,9 @@
 
 .smart-filter-popup-result {
 	position: absolute;
+	left: -11px;
+	bottom: -45px;
+	background-color: white;
 	z-index: 915;
 	display: none;
 	margin-top: -7px;

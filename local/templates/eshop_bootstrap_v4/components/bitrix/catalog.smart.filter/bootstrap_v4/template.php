@@ -19,18 +19,112 @@ if (isset($templateData['TEMPLATE_THEME']))
 {
 	$this->addExternalCss($templateData['TEMPLATE_THEME']);
 }
-
+// не используется:
+// $arParams["FILTER_VIEW_MODE"] - не используется, верстка рассчитана на 1 вид
+// $arItem["DISPLAY_EXPANDED"] - используется только select, его нельзя показать развернутым
+// $arItem["FILTER_HINT"]
 ?>
+<form name="<? echo $arResult["FILTER_NAME"] . "_form" ?>" action="<? echo $arResult["FORM_ACTION"] ?>" method="get"
+      class="smart-filter-form">
+	<?php foreach ($arResult["HIDDEN"] as $arItem) { ?>
+      <input type="hidden" name="<?= $arItem["CONTROL_NAME"] ?>"
+             id="<?= $arItem["CONTROL_ID"] ?>" value="<?= $arItem["HTML_VALUE"] ?>"/>
+	<?php } ?>
+  <div class="filter__items">
+    <?php //фильтры ?>
+    <?php foreach($arResult["ITEMS"] as $key => $arItem) { ?>
+      <?php // если нет подпунктов или это цены - не выводим
+        if (empty($arItem["VALUES"]) || isset($arItem["PRICE"])) {
+          continue;
+        }
+        // если тип - "Число от-до, с ползунком" и max <= min - не выводим
+        if ($arItem["DISPLAY_TYPE"] == "A" &&
+            ( $arItem["VALUES"]["MAX"]["VALUE"] - $arItem["VALUES"]["MIN"]["VALUE"] <= 0)) {
+          continue;
+        }
+      ?>
+      <?php //DISPLAY_TYPE - default (Флажки) ?>
+      <div class="smart-filter-parameters-box <?// $arItem["DISPLAY_EXPANDED"]== "Y" ? 'bx-active' : '' ?>">
+        <div class="smart-filter-parameters-box-title" onclick="smartFilter.hideFilterProps(this)">
+          <span class="smart-filter-parameters-box-title-text"><?=$arItem["NAME"]?></span>
+          <span data-role="prop_angle" class="smart-filter-angle smart-filter-angle-<?= $arItem["DISPLAY_EXPANDED"]== "Y"? 'up' : 'down' ?>"><span class="smart-filter-angles"></span></span>
+        </div>
+        <div class="smart-filter-block" data-role="bx_filter_block">
+          <div class="smart-filter-parameters-box-container">
+            <div class="smart-filter-input-group-checkbox-list">
+				      <?foreach($arItem["VALUES"] as $val => $ar):?>
+                  <div class="form-group form-check mb-1">
+                    <input
+                      type="checkbox"
+                      value="<? echo $ar["HTML_VALUE"] ?>"
+                      name="<? echo $ar["CONTROL_NAME"] ?>"
+                      id="<? echo $ar["CONTROL_ID"] ?>"
+                      class="form-check-input"
+                      <?= $ar["CHECKED"]? 'checked="checked"': '' ?>
+                      <?= $ar["DISABLED"] ? 'disabled': '' ?>
+                      onclick="smartFilter.click(this)"
+                    />
+                    <label data-role="label_<?=$ar["CONTROL_ID"]?>"
+                           class="smart-filter-checkbox-text form-check-label"
+                           for="<? echo $ar["CONTROL_ID"] ?>">
+                      <?=$ar["VALUE"];
+						          if ($arParams["DISPLAY_ELEMENT_COUNT"] !== "N" && isset($ar["ELEMENT_COUNT"])){?>
+                        (<span data-role="count_<?=$ar["CONTROL_ID"]?>"><?= $ar["ELEMENT_COUNT"]; ?></span>)
+                      <?}?>
+                    </label>
+                  </div>
+				      <?endforeach;?>
+            </div>
+          </div>
+        </div>
+      </div>
+    <?php } ?>
+
+    <?php // кнопки "Показать" и "Сбросить" ?>
+    <div style="padding: 10px 1px;">
+      <div class="smart-filter-parameters-box">
+        <div class="smart-filter-parameters-box-container">
+          <input
+            class="btn btn-primary"
+            type="submit"
+            id="set_filter"
+            name="set_filter"
+            value="<?=GetMessage("CT_BCSF_SET_FILTER")?>"
+          />
+          <input
+            class="btn btn-link"
+            type="submit"
+            id="del_filter"
+            name="del_filter"
+            value="<?=GetMessage("CT_BCSF_DEL_FILTER")?>"
+          />
+          <div class="smart-filter-popup-result <?if ($arParams["FILTER_VIEW_MODE"] == "VERTICAL") echo $arParams["POPUP_POSITION"]?>" id="modef" <?if(!isset($arResult["ELEMENT_COUNT"])) echo 'style="display:none"';?> style="display: inline-block;">
+			  <?echo GetMessage("CT_BCSF_FILTER_COUNT", array("#ELEMENT_COUNT#" => '<span id="modef_num">'.intval($arResult["ELEMENT_COUNT"]).'</span>'));?>
+            <span class="arrow"></span>
+            <br/>
+            <a href="<?echo $arResult["FILTER_URL"]?>" target=""><?echo GetMessage("CT_BCSF_FILTER_SHOW")?></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</form>
+  <script type="text/javascript">
+		var smartFilter = new JCSmartFilter('<?echo CUtil::JSEscape($arResult["FORM_ACTION"])?>', '<?=CUtil::JSEscape($arParams["FILTER_VIEW_MODE"])?>', <?=CUtil::PhpToJSObject($arResult["JS_FILTER_PARAMS"])?>);
+  </script>
+
+
+<?php /*
 <div class="smart-filter mb-4 <?=$templateData["TEMPLATE_CLASS"]?> <?if ($arParams["FILTER_VIEW_MODE"] == "HORIZONTAL") echo "smart-filter-horizontal"?>">
 	<div class="smart-filter-section">
-
-		<div class="smart-filter-title"><?echo GetMessage("CT_BCSF_FILTER_TITLE")?></div>
 
 		<form name="<?echo $arResult["FILTER_NAME"]."_form"?>" action="<?echo $arResult["FORM_ACTION"]?>" method="get" class="smart-filter-form">
 
 			<?foreach($arResult["HIDDEN"] as $arItem):?>
 				<input type="hidden" name="<?echo $arItem["CONTROL_NAME"]?>" id="<?echo $arItem["CONTROL_ID"]?>" value="<?echo $arItem["HTML_VALUE"]?>" />
 			<?endforeach;?>
+
 
 			<div class="row">
 				<?foreach($arResult["ITEMS"] as $key=>$arItem)//prices
@@ -163,6 +257,7 @@ if (isset($templateData['TEMPLATE_THEME']))
 					if ($arItem["DISPLAY_TYPE"] == "A" && ( $arItem["VALUES"]["MAX"]["VALUE"] - $arItem["VALUES"]["MIN"]["VALUE"] <= 0))
 						continue;
 					?>
+			<?php //HERE ?>
 
 					<div class="<?if ($arParams["FILTER_VIEW_MODE"] == "HORIZONTAL"):?>col-sm-6 col-md-4<?else:?>col-lg-12<?endif?> mb-2 smart-filter-parameters-box <?if ($arItem["DISPLAY_EXPANDED"]== "Y"):?>bx-active<?endif?>">
 						<span class="smart-filter-container-modef"></span>
@@ -195,7 +290,7 @@ if (isset($templateData['TEMPLATE_THEME']))
 							{
 								//region NUMBERS_WITH_SLIDER +
 								case "A":
-								?>
+								?>case "A":
 									<div class="smart-filter-input-group-number">
 										<div class="d-flex justify-content-between">
 
@@ -291,7 +386,7 @@ if (isset($templateData['TEMPLATE_THEME']))
 
 								//region NUMBERS +
 								case "B":
-								?>
+								?>case "B":
 									<div class="smart-filter-input-group-number">
 										<div class="d-flex justify-content-between">
 											<div class="form-group" style="width: calc(50% - 10px);">
@@ -331,7 +426,7 @@ if (isset($templateData['TEMPLATE_THEME']))
 
 								//region CHECKBOXES_WITH_PICTURES +
 								case "G":
-								?>
+								?> case "G":
 									<div class="smart-filter-input-group-checkbox-pictures">
 										<?foreach ($arItem["VALUES"] as $val => $ar):?>
 											<input
@@ -368,7 +463,7 @@ if (isset($templateData['TEMPLATE_THEME']))
 
 								//region CHECKBOXES_WITH_PICTURES_AND_LABELS +
 								case "H":
-								?>
+								?>case "H":
 									<div class="smart-filter-input-group-checkbox-pictures-text">
 										<?foreach ($arItem["VALUES"] as $val => $ar):?>
 										<input
@@ -410,7 +505,7 @@ if (isset($templateData['TEMPLATE_THEME']))
 
 								//region DROPDOWN +
 								case "P":
-								?>
+								?> case "P":
 									<? $checkedItemExist = false; ?>
 									<div class="smart-filter-input-group-dropdown">
 										<div class="smart-filter-dropdown-block" onclick="smartFilter.showDropDownPopup(this, '<?=CUtil::JSEscape($key)?>')">
@@ -484,7 +579,7 @@ if (isset($templateData['TEMPLATE_THEME']))
 
 								//region DROPDOWN_WITH_PICTURES_AND_LABELS
 								case "R":
-									?>
+									?>case "R":
 										<div class="smart-filter-input-group-dropdown">
 											<div class="smart-filter-dropdown-block" onclick="smartFilter.showDropDownPopup(this, '<?=CUtil::JSEscape($key)?>')">
 												<div class="smart-filter-input-group-dropdown-flex" data-role="currentOption">
@@ -573,7 +668,7 @@ if (isset($templateData['TEMPLATE_THEME']))
 
 								//region RADIO_BUTTONS
 								case "K":
-									?>
+									?>case "K":
 									<div class="col">
 										<div class="radio">
 											<label class="smart-filter-param-label" for="<? echo "all_".$arCur["CONTROL_ID"] ?>">
@@ -618,7 +713,7 @@ if (isset($templateData['TEMPLATE_THEME']))
 
 								//region CALENDAR
 								case "U":
-									?>
+									?>case "U":
 									<div class="col">
 										<div class=""><div class="smart-filter-input-container smart-filter-calendar-container">
 											<?$APPLICATION->IncludeComponent(
@@ -730,6 +825,3 @@ if (isset($templateData['TEMPLATE_THEME']))
 	</div>
 </div>
 
-<script type="text/javascript">
-	var smartFilter = new JCSmartFilter('<?echo CUtil::JSEscape($arResult["FORM_ACTION"])?>', '<?=CUtil::JSEscape($arParams["FILTER_VIEW_MODE"])?>', <?=CUtil::PhpToJSObject($arResult["JS_FILTER_PARAMS"])?>);
-</script>
