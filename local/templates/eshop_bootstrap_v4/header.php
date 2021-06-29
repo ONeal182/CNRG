@@ -417,14 +417,24 @@ $isMain = $APPLICATION->GetCurPage(false) === '/';
 					</div>
 				</div>
 				<div class="col-lg-1 col-sm-2 order-lg-4 order-sm-3 d-none d-sm-block mt-lg-4">
-					<div class="header__cart-block">
-
-						<a href="/cart.php" class="cart-block_item">
-							<div class="cart__quanity">150</div>
-							<img src="/assets/img/icons/cart.svg">
-							<span> Корзина </span>
-						</a>
-					</div>
+									<? $APPLICATION->IncludeComponent(
+						"bitrix:sale.basket.basket.line",
+						"bootstrap_v5",
+						array(
+							"PATH_TO_BASKET" => SITE_DIR . "personal/cart/",	// Страница корзины
+							"PATH_TO_PERSONAL" => SITE_DIR . "personal/",	// Страница персонального раздела
+							"SHOW_PERSONAL_LINK" => "N",	// Отображать персональный раздел
+							"SHOW_NUM_PRODUCTS" => "Y",	// Показывать количество товаров
+							"SHOW_TOTAL_PRICE" => "Y",	// Показывать общую сумму по товарам
+							"SHOW_PRODUCTS" => "N",	// Показывать список товаров
+							"POSITION_FIXED" => "N",	// Отображать корзину поверх шаблона
+							"SHOW_AUTHOR" => "Y",	// Добавить возможность авторизации
+							"PATH_TO_REGISTER" => SITE_DIR . "login/",	// Страница регистрации
+							"PATH_TO_PROFILE" => SITE_DIR . "personal/",	// Страница профиля
+							'MOBILE' => 'false'
+						),
+						false
+					); ?>
 				</div>
 			</div>
 		</div>
@@ -432,11 +442,25 @@ $isMain = $APPLICATION->GetCurPage(false) === '/';
 
 	<div class="sticky__module">
 		<div class="sticky__module-items">
-			<a href="#" class="cart-block_item">
-				<div class="cart__quanity">150</div>
-				<img src="/assets/img/icons/cart.svg">
-				<span> Корзина </span>
-			</a>
+
+			<? $APPLICATION->IncludeComponent(
+						"bitrix:sale.basket.basket.line",
+						"bootstrap_v5",
+						array(
+							"PATH_TO_BASKET" => SITE_DIR . "personal/cart/",	// Страница корзины
+							"PATH_TO_PERSONAL" => SITE_DIR . "personal/",	// Страница персонального раздела
+							"SHOW_PERSONAL_LINK" => "N",	// Отображать персональный раздел
+							"SHOW_NUM_PRODUCTS" => "Y",	// Показывать количество товаров
+							"SHOW_TOTAL_PRICE" => "Y",	// Показывать общую сумму по товарам
+							"SHOW_PRODUCTS" => "N",	// Показывать список товаров
+							"POSITION_FIXED" => "N",	// Отображать корзину поверх шаблона
+							"SHOW_AUTHOR" => "Y",	// Добавить возможность авторизации
+							"PATH_TO_REGISTER" => SITE_DIR . "login/",	// Страница регистрации
+							"PATH_TO_PROFILE" => SITE_DIR . "personal/",	// Страница профиля
+							'MOBILE' => 'true'
+						),
+						false
+					); ?>
 			<a href="#" class="cart-block_item">
 				<img src="/assets/img/icons/phone.svg">
 				<span> Позвонить </span>
