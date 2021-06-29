@@ -6,11 +6,12 @@
  * @global string $cartId
  */
 $compositeStub = (isset($arResult['COMPOSITE_STUB']) && $arResult['COMPOSITE_STUB'] == 'Y');
+$arResult['BASKET_COUNT_DESCRIPTION'] =  preg_replace('/[^0-9]/', '', $arResult['BASKET_COUNT_DESCRIPTION']);
 ?>
 <?if($arParams['MOBILE'] == 'false'){?>
 	<div class="header__cart-block">
 				<?
-				$arResult['BASKET_COUNT_DESCRIPTION'] =  preg_replace('/[^0-9]/', '', $arResult['BASKET_COUNT_DESCRIPTION']);
+				
 				?>
 		<a href="<?= $arParams['PATH_TO_BASKET'] ?>" class="cart-block_item">
 			<div class="cart__quanity"><?echo $arResult['BASKET_COUNT_DESCRIPTION']?></div>
@@ -19,9 +20,9 @@ $compositeStub = (isset($arResult['COMPOSITE_STUB']) && $arResult['COMPOSITE_STU
 		</a>
 	</div>
 <?}else{?>
-	<a href="#" class="cart-block_item">
-				<div class="cart__quanity">150</div>
+	<a href="<?= $arParams['PATH_TO_BASKET'] ?>" class="cart-block_item">
+				<div class="cart__quanity"><?echo $arResult['BASKET_COUNT_DESCRIPTION']?></div>
 				<img src="/assets/img/icons/cart.svg">
-				<span> Корзина </span>
+				<span> <?= GetMessage('TSB1_CART') ?> </span>
 			</a>
 <?}?>
