@@ -889,3 +889,9 @@ BX.Iblock.SmartFilter = (function()
 
 	return SmartFilter;
 })();
+
+// checked
+$(document).on('click', '.filter__checked-cross', function () {
+	const id = $(this).data('id');
+	$input = $(this).parents('form').find(`input\#${id}`).click();
+});

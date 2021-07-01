@@ -37,3 +37,12 @@ else
 
 $arParams["FILTER_VIEW_MODE"] = (isset($arParams["FILTER_VIEW_MODE"]) && toUpper($arParams["FILTER_VIEW_MODE"]) == "HORIZONTAL") ? "HORIZONTAL" : "VERTICAL";
 $arParams["POPUP_POSITION"] = (isset($arParams["POPUP_POSITION"]) && in_array($arParams["POPUP_POSITION"], array("left", "right"))) ? $arParams["POPUP_POSITION"] : "left";
+
+// checked
+foreach ($arResult["ITEMS"] as $key => $arItem) {
+	foreach($arItem["VALUES"] as $val => $ar) {
+		if ($ar['CHECKED']) {
+			$arResult['CHECKED'][] = $ar;
+		}
+	}
+}
