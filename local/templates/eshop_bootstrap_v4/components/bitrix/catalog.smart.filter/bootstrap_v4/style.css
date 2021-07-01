@@ -947,3 +947,8 @@ span.filter__checked-cross {
     justify-content: center;
     margin-left: 9px;
 }
+
+span.filter__checked-cross:hover {
+    background: #01aef2;
+    color: #fff;
+}
