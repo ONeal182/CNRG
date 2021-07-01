@@ -39,7 +39,7 @@ if (isset($arParams['USE_COMMON_SETTINGS_BASKET_POPUP']) && $arParams['USE_COMMO
         <?php /* filter */ ?>
         <?php if ($isFilter) { ?>
           <div class="category__filter">
-            <?php //require_once 'section_filter.php'; ?>
+            <?php require_once 'section_filter.php'; ?>
           </div>
         <?php } ?>
 
