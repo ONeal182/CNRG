@@ -2913,6 +2913,12 @@ section.page__content.news__page {
 
 /* application */
 
+.application__overlay {
+    margin-bottom: 45px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 45px;
+}
+
 .application__img {
     display: flex;
     flex-flow: row;

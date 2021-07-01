@@ -261,6 +261,11 @@ $('.news__slider').slick({
     ]
 });
 
+/* Scrollspy */
+
+var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+    target: '#application__menu'
+})
 
 
 /* Multiplie filter */
@@ -287,10 +292,10 @@ $('.product-page__img-thumbs').slick({
 });
 
 /* Add to cart
-* params:
-*   data-offer-id (required)
-*   quantity
-* */
+ * params:
+ *   data-offer-id (required)
+ *   quantity
+ * */
 $('.jsAddToCart').on('click', function() {
     var offerID = parseInt($(this).data('offer-id'));
     var quantity = parseInt($(this).data('quantity'));
@@ -300,7 +305,7 @@ $('.jsAddToCart').on('click', function() {
     if (!inCart) {
         $.ajax({
             url: '/local/templates/eshop_bootstrap_v4/tools/add_to_basket.php',
-            method:'post',
+            method: 'post',
             dataType: 'json',
             data: {
                 'quantity': quantity,
