@@ -480,6 +480,10 @@ a.link:hover,
     color: #fff;
     padding: 3px;
     font-size: 10px;
+    min-width: 16px;
+    min-height: 16px;
+    justify-content: center;
+    align-items: center;
     display: flex;
     line-height: 10px;
     border-radius: 100px;
@@ -1642,6 +1646,8 @@ section.topbar__page.topbar__catalog {
     flex-flow: column;
     margin-top: 5px;
     margin-bottom: 15px;
+    max-height: 500px;
+    padding-right: 20px
 }
 
 .catalog-list__overlay:hover catalog-list__link a {
@@ -1666,10 +1672,39 @@ section.topbar__page.topbar__catalog {
     left: 0px;
     top: 0px;
     min-height: 100%;
-    padding: 20px;
+    padding: 20px 10px 20px 20px;
     border: 1px solid #eee;
     background: #fff;
     transition: 0.3s;
+}
+
+.catalog-list__overlay:hover .catalog-list__link {
+    overflow-y: auto;
+}
+
+.catalog-list__link
+/* override x.xhtml.ru style */
+
+{
+    scrollbar-width: thin;
+    scrollbar-color: #afd7e9 #f9f9f9;
+}
+
+.catalog-list__link::-webkit-scrollbar,
+.catalog-list__link::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+}
+
+.catalog-list__link::-webkit-scrollbar-track,
+.catalog-list__link::-webkit-scrollbar-track {
+    background: #f9f9f9;
+}
+
+.catalog-list__link::-webkit-scrollbar-thumb,
+.catalog-list__link::-webkit-scrollbar-thumb {
+    background-color: #afd7e9;
+    border-radius: 5px;
 }
 
 .catalog-list__showfull {
