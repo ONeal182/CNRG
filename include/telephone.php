@@ -1,1 +1,1 @@
-<a href="tel:+7&nbsp;(812)&nbsp;309-88-11" class="fcond">+7&nbsp;(812)&nbsp;309-88-11<br></a>
+<a href="tel:+7(812)309-88-11" >+7&nbsp;(812)&nbsp;309-88-11<br></a>

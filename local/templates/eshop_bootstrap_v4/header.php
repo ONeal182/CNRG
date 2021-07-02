@@ -48,8 +48,24 @@ $isMain = $APPLICATION->GetCurPage(false) === '/';
 			<div class="container-xl container-fluid text-center">
 				<div class="top-info__block d-flex justify-content-center">
 					<img src="/assets/img/icons/information.svg" class="img top-info__icon">
-					<div class="top-info__text d-none d-lg-block">Работаем только с юридическими лицами. Минимальный заказ от 20 000 руб.</div>
-					<div class="top-info__text d-block d-lg-none">Работаем только с юр.лицами. Мин.заказ от 20тыс.руб.</div>
+					<div class="top-info__text d-none d-lg-block">Работаем только с юридическими лицами. Минимальный заказ от <? $APPLICATION->IncludeComponent(
+							"bitrix:main.include",
+							"",
+							array(
+								"AREA_FILE_SHOW" => "file",
+								"PATH" => SITE_DIR . "include/minorder.php"
+							),
+							false
+						); ?></div>
+					<div class="top-info__text d-block d-lg-none">Работаем только с юр.лицами. Мин.заказ от <? $APPLICATION->IncludeComponent(
+							"bitrix:main.include",
+							"",
+							array(
+								"AREA_FILE_SHOW" => "file",
+								"PATH" => SITE_DIR . "include/minorder.php"
+							),
+							false
+						); ?></div>
 				</div>
 			</div>
 		</div>
