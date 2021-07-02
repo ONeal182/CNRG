@@ -9,35 +9,35 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Как заказать", 
-		"about/howto/", 
+		"howto/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Оплата", 
-		"about/delivery/", 
+		"pay/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Доставка", 
-		"about/", 
+		"delivery/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"О нас", 
-		"about/guaranty/", 
+		"about/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Контакты", 
-		"about/contacts/", 
+		"contacts/", 
 		Array(), 
 		Array(), 
 		"" 

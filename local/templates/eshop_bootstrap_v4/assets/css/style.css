@@ -201,7 +201,7 @@ nav.header__navbar ul li a {
     flex-flow: column;
 }
 
-.contacts__phone a.fcond {
+.contacts__phone a {
     text-decoration: none;
     font-family: DIN Pro;
     font-size: 19px;
@@ -224,7 +224,7 @@ a.link {
     color: #255FAF;
 }
 
-.contacts__email a.fcond {
+.contacts__email a {
     font-family: DIN Pro;
     font-size: 19px;
     font-style: normal;
@@ -237,7 +237,7 @@ a.link {
 }
 
 .contacts__email span {
-    font-family: DIN Pro C;
+    font-family: DIN Pro;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -1193,7 +1193,7 @@ img.portfolio__item-img {
 }
 
 .portfolio__section p {
-    font-family: DIN Pro C;
+    font-family: DIN Pro;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;

@@ -9,7 +9,15 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
         <div class="banner__overlay">
           <div class="container">
             <h1>Производим  сувениры, подарки и<br> промо-одежду для увеличения продаж <br> в вашем бизнесе </h1>
-            <div class="banner__info"><img src="/assets/img/icons/information-c2.svg"><p> Работаем только с юридическими лицами. Минимальный заказ от 20 000 руб. </p> </div>
+            <div class="banner__info"><img src="/assets/img/icons/information-c2.svg"><p> Работаем только с юридическими лицами. Минимальный заказ от <? $APPLICATION->IncludeComponent(
+							"bitrix:main.include",
+							"",
+							array(
+								"AREA_FILE_SHOW" => "file",
+								"PATH" => SITE_DIR . "include/minorder.php"
+							),
+							false
+						); ?> </p> </div>
             <div class="row banner__inner-block">
               <div class="col-lg-7 col-md-6 col-12 col pe-md-0 mb-2 inner-block__col-1">
                 <div class="inner-block__overlay">

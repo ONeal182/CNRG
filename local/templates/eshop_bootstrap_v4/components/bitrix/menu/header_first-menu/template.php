@@ -17,7 +17,7 @@ if (empty($arResult))
 	return;
 ?>
 
-
+<ul>
 		<?foreach($arResult as $itemIdex => $arItem):?>
 			<?if ($arItem["DEPTH_LEVEL"] == "1"):?>
 				<li>
@@ -25,4 +25,5 @@ if (empty($arResult))
 				</li>
 			<?endif?>
 		<?endforeach;?>
+</ul>
 
