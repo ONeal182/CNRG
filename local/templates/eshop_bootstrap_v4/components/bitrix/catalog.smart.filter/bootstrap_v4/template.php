@@ -32,7 +32,7 @@ if (isset($templateData['TEMPLATE_THEME']))
 	<?php } ?>
 
   <div class="filter__checked">
-	  <?php foreach ($arResult['CHECKED'] as $ar) { ?>
+	  <?php foreach ($arResult['SHOWN_CHECKED'] as $ar) { ?>
       <?php if (!$ar["DISABLED"]) { ?>
         <div class="filter__checked-item" data-control-name-alt="<?= $ar['CONTROL_NAME_ALT'] ?>">
           <span><?= $ar["VALUE"] ?></span> <span class="filter__checked-cross" data-id="<?= $ar["CONTROL_ID"] ?>">X</span>
@@ -54,41 +54,13 @@ if (isset($templateData['TEMPLATE_THEME']))
         }
       ?>
 
-      <?php //шаблон DISPLAY_TYPE - default (Флажки) ?>
-      <div class="smart-filter-parameters-box <?// $arItem["DISPLAY_EXPANDED"]== "Y" ? 'bx-active' : '' ?>">
-            <div class="smart-filter-parameters-box-title" onclick="smartFilter.hideFilterProps(this)">
-              <span class="smart-filter-parameters-box-title-text"><?=$arItem["NAME"]?></span>
-              <span data-role="prop_angle" class="smart-filter-angle smart-filter-angle-<?= $arItem["DISPLAY_EXPANDED"]== "Y"? 'up' : 'down' ?>"><span class="smart-filter-angles"></span></span>
-            </div>
-            <div class="smart-filter-block" data-role="bx_filter_block">
-              <div class="smart-filter-parameters-box-container">
-                <div class="smart-filter-input-group-checkbox-list">
-                  <?foreach($arItem["VALUES"] as $val => $ar):?>
-                      <div class="form-group form-check">
-                        <input
-                          type="checkbox"
-                          value="<? echo $ar["HTML_VALUE"] ?>"
-                          name="<? echo $ar["CONTROL_NAME"] ?>"
-                          id="<? echo $ar["CONTROL_ID"] ?>"
-                          class="form-check-input"
-                          <?= $ar["CHECKED"]? 'checked="checked"': '' ?>
-                          <?= $ar["DISABLED"] ? 'disabled': '' ?>
-                          onclick="smartFilter.click(this)"
-                        />
-                        <label data-role="label_<?=$ar["CONTROL_ID"]?>"
-                               class="smart-filter-checkbox-text form-check-label"
-                               for="<? echo $ar["CONTROL_ID"] ?>">
-                          <?=$ar["VALUE"];
-                          if ($arParams["DISPLAY_ELEMENT_COUNT"] !== "N" && isset($ar["ELEMENT_COUNT"])){?>
-                            (<span data-role="count_<?=$ar["CONTROL_ID"]?>"><?= $ar["ELEMENT_COUNT"]; ?></span>)
-                          <?}?>
-                        </label>
-                      </div>
-                  <?endforeach;?>
-                </div>
-              </div>
-            </div>
-          </div>
+		<?php
+        // для свойств с типом Список и единственным вариантом "Да"
+        if ($arItem['ISLIKECHECKBOX']) {
+          require 'filter-item-like-checkbox.php';
+        } else { //default
+          require 'filter-item-default.php';
+        } ?>
     <?php } ?>
   </div>
 
