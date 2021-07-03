@@ -164,8 +164,10 @@ if (!empty($arResult['ITEMS']) && !empty($arResult['ITEM_ROWS']))
 {
   $areaIds = array();
   foreach ($arResult['ITEMS'] as $item) {
-    $uniqueId = $item['ID'].'_'.md5($this->randString().$component->getAction());
-    $areaIds[$item['ID']] = $this->GetEditAreaId($uniqueId);
+	  $uniqueId = $item['ID'].'_'.md5($this->randString().$component->getAction());
+	  $areaIds[$item['ID']] = $this->GetEditAreaId($uniqueId);
+	  $this->AddEditAction($uniqueId, $item['EDIT_LINK'], $elementEdit);
+	  $this->AddDeleteAction($uniqueId, $item['DELETE_LINK'], $elementDelete, $elementDeleteParams);
   } ?>
   <div data-entity="<?= $containerName ?>">
     <?foreach ($arResult['ITEM_ROWS'] as $rowData) {
