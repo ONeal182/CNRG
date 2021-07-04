@@ -2623,8 +2623,24 @@ $(document).on('mouseenter', '.js-offer', function () {
 	$card.find('.js-name').html($(this).data('name'));
 	$card.find('.js-article').html($(this).data('article'));
 	$card.find('.js-available').html($(this).data('available'));
-	$card.find('.js-old-price').html($(this).data('available'));
-	$card.find('.js-price').html($(this).data('price'));
-	$card.find('.js-old-price').html($(this).data('old-price'));
-	$card.find('.jsAddToCart').data('offer-id', $(this).data('id'));
+
+	if (parseInt($(this).data('available')) > 0) {
+		// цены
+		$card.find('.js-price').html($(this).data('price'));
+		$card.find('.js-old-price').html($(this).data('old-price'));
+		// кнопка
+		$card.find('.jsAddToCart')
+			.html(`<img src="/local/templates/eshop_bootstrap_v4/assets/img/icons/cart-button.svg"> В корзину`)
+			.attr('disabled', false)
+			.data('offer-id', $(this).data('id'));
+	} else { // если нет доступных к покупке единиц товара
+		// цены
+		$card.find('.js-price').html('');
+		$card.find('.js-old-price').html('');
+		// кнопка
+		$card.find('.jsAddToCart')
+			.html('Нет в наличии')
+			.attr('disabled', true)
+			.data('offer-id', $(this).data('id'));
+	}
 });

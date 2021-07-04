@@ -2970,3 +2970,8 @@ section.hits__section {
 .hits__section .title-with-arrow {
     margin-bottom: 25px;
 }
+
+input[disabled],
+button[disabled]{
+    pointer-events: none;
+}
