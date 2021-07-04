@@ -89,8 +89,7 @@ if (isset($arResult['ITEM'])) {
 	$itemHasDetailUrl = isset($item['DETAIL_PAGE_URL']) && $item['DETAIL_PAGE_URL'] != '';
 	?>
 
-  <div class="product product__card col-lg-4 col-sm-6"
-      id="<?= $areaId ?>" data-entity="item">
+
 	  <?
 	  $documentRoot = Main\Application::getDocumentRoot();
 	  $templatePath = mb_strtolower($arResult['TYPE']) . '/template.php';
@@ -271,7 +270,7 @@ if (isset($arResult['ITEM'])) {
     <script>
 			var <?=$obName?> = new JCCatalogItem(<?=CUtil::PhpToJSObject($jsParams, false, true)?>);
     </script>
-  </div>
+
 	<?
 	unset($item, $actualItem, $minOffer, $itemIds, $jsParams);
 }

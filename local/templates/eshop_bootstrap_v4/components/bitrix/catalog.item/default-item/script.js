@@ -2633,6 +2633,7 @@ $(document).on('mouseenter', '.js-offer', function () {
 			.html(`<img src="/local/templates/eshop_bootstrap_v4/assets/img/icons/cart-button.svg"> В корзину`)
 			.attr('disabled', false)
 			.data('offer-id', $(this).data('id'));
+		$card.removeClass('disabled');
 	} else { // если нет доступных к покупке единиц товара
 		// цены
 		$card.find('.js-price').html('');
@@ -2642,5 +2643,6 @@ $(document).on('mouseenter', '.js-offer', function () {
 			.html('Нет в наличии')
 			.attr('disabled', true)
 			.data('offer-id', $(this).data('id'));
+		$card.addClass('disabled');
 	}
 });
