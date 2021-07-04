@@ -24,8 +24,7 @@ use \Bitrix\Main\Localization\Loc;
 
 $offer = reset($item['OFFERS']);
 ?>
-<div class="product product__card col-lg-4 col-sm-6 <?= !$offer['CAN_BUY'] ? 'disabled' : '' ?>"
-     id="<?= $areaId ?>" data-entity="item">
+
   <div class="product__card-overlay">
     <div class="product__img-gallery">
 
@@ -93,6 +92,6 @@ $offer = reset($item['OFFERS']);
 
     </div>
   </div>
-</div>
+
 
 
