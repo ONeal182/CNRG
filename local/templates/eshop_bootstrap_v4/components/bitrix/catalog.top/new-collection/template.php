@@ -103,9 +103,10 @@ if (!empty($arResult['ITEMS']))
         <div class="slider__product">
 			    <?php foreach ($arResult['ITEMS'][0] as $item) { ?>
               <?php
-                $areaIds = array();
                 $uniqueId = $item['ID'].'_'.md5($this->randString().$component->getAction());
                 $areaIds[$item['ID']] = $this->GetEditAreaId($uniqueId);
+                $this->AddEditAction($uniqueId, $item['EDIT_LINK'], $elementEdit);
+                $this->AddDeleteAction($uniqueId, $item['DELETE_LINK'], $elementDelete, $elementDeleteParams);
               ?>
               <? $APPLICATION->IncludeComponent(
                 'bitrix:catalog.item',

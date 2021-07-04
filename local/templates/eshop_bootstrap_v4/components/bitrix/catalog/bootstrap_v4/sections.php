@@ -75,6 +75,7 @@ $this->setFrameMode(true);
     "ELEMENT_SORT_ORDER2" => "desc",	// Порядок второй сортировки элементов
     "ENLARGE_PRODUCT" => "STRICT",	// Выделять товары в списке
     "FILTER_NAME" => "",	// Имя массива со значениями фильтра для фильтрации элементов
+//    "FILL_ITEM_ALL_PRICES" => "Y",
     "HIDE_NOT_AVAILABLE" => "N",	// Недоступные товары
     "HIDE_NOT_AVAILABLE_OFFERS" => "N",	// Недоступные торговые предложения
     "IBLOCK_ID" => "4",	// Инфоблок
@@ -96,7 +97,8 @@ $this->setFrameMode(true);
     "OFFERS_SORT_ORDER" => "asc",	// Порядок сортировки предложений товара
     "OFFERS_SORT_ORDER2" => "desc",	// Порядок второй сортировки предложений товара
     "PARTIAL_PRODUCT_PROPERTIES" => "N",	// Разрешить добавлять в корзину товары, у которых заполнены не все характеристики
-    "PRICE_CODE" => "",	// Тип цены
+	  "PRICE_CODE" => Array('BASE'), // Тип цены
+	  "USE_PRICE_COUNT" => "N", // Использовать вывод цен с диапазонами
     "PRICE_VAT_INCLUDE" => "Y",	// Включать НДС в цену
     "PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",	// Порядок отображения блоков товара
     "PRODUCT_DISPLAY_MODE" => "N",	// Схема отображения
@@ -109,9 +111,9 @@ $this->setFrameMode(true);
     "SECTION_URL" => "",	// URL, ведущий на страницу с содержимым раздела
     "SEF_MODE" => "N",	// Включить поддержку ЧПУ
     "SHOW_CLOSE_POPUP" => "N",	// Показывать кнопку продолжения покупок во всплывающих окнах
-    "SHOW_DISCOUNT_PERCENT" => "N",	// Показывать процент скидки
-    "SHOW_MAX_QUANTITY" => "N",	// Показывать остаток товара
-    "SHOW_OLD_PRICE" => "N",	// Показывать старую цену
+    "SHOW_DISCOUNT_PERCENT" => "Y",	// Показывать процент скидки
+    "SHOW_MAX_QUANTITY" => "Y",	// Показывать остаток товара
+    "SHOW_OLD_PRICE" => "Y",	// Показывать старую цену
     "SHOW_PAGINATION" => "Y",	// Показывать навигацию по слайдам
     "SHOW_PRICE_COUNT" => "1",	// Выводить цены для количества
     "SHOW_SLIDER" => "Y",	// Показывать слайдер для товаров

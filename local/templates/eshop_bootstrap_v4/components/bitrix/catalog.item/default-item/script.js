@@ -2616,3 +2616,15 @@
 		}
 	};
 })(window);
+
+$(document).on('mouseenter', '.js-offer', function () {
+	$card = $(this).closest('.product__card');
+	$card.find('.js-img').css('background-image', `url(${$(this).data('img')})`);
+	$card.find('.js-name').html($(this).data('name'));
+	$card.find('.js-article').html($(this).data('article'));
+	$card.find('.js-available').html($(this).data('available'));
+	$card.find('.js-old-price').html($(this).data('available'));
+	$card.find('.js-price').html($(this).data('price'));
+	$card.find('.js-old-price').html($(this).data('old-price'));
+	$card.find('.jsAddToCart').data('offer-id', $(this).data('id'));
+});

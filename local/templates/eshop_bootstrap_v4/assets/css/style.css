@@ -903,7 +903,7 @@ li.nav-item {
     left: 0px;
     display: flex;
     flex-flow: column;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .img-thumbs {
