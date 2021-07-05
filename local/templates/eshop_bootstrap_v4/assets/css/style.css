@@ -498,7 +498,7 @@ a.link:hover,
 .sticky__module {
     position: fixed;
     right: 0px;
-    top: 50%;
+    top: 26%;
     z-index: 9;
     background: #fff;
     box-shadow: 0px 0px 25px -23px #000;
@@ -624,7 +624,7 @@ a.link:hover,
 .banner__section h1 {
     color: #fff;
     font-family: 'DIN Pro Cond';
-    font-size: 52px;
+    font-size: 50px;
     font-style: normal;
     font-weight: 700;
     line-height: 63px;
@@ -775,6 +775,10 @@ form.banner__form-form {
     z-index: 1;
 }
 
+.row.banner__inner-block {
+    width: 83%;
+}
+
 
 /*Trust block */
 
@@ -846,6 +850,10 @@ section.catalog-category__section {
 
 .catalog-category__section .pills__overlay-mobile {
     margin-bottom: 35px;
+}
+
+.product__card-button .button {
+    padding: 12px 15px;
 }
 
 
@@ -1602,11 +1610,15 @@ footer {
     padding-left: 45px;
 }
 
+.footer__catalog .menu__footer:nth-child(2) {
+    width: 59%;
+}
+
 .title__footer {
     text-transform: uppercase;
     font-family: 'DIN Pro Cond';
     font-size: 20px;
-    color: #99D8F3;
+    color: #01aef2;
     font-weight: 600;
     margin-bottom: 15px;
 }
@@ -1627,7 +1639,7 @@ footer {
 }
 
 .footer__logo-block p {
-    color: #99D8F3;
+    color: #01aef2;
     font-weight: 600;
     margin-top: 6px;
 }

@@ -14,10 +14,8 @@ $APPLICATION->SetTitle("О нас");
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-				<div class="img-background" style="background-image:url(/assets/img/team.jpg)">
-                       
-                    </div>
-                   
+                <img src="/assets/img/team.jpg" class="mb-4" width="100%">
+              
 					<? $APPLICATION->IncludeComponent(
 								"bitrix:main.include",
 								"",
