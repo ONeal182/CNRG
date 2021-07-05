@@ -84,7 +84,7 @@ $isMain = $APPLICATION->GetCurPage(false) === '/';
 						); ?>
 					</a>
 				</div>
-				<div class="col-auto col-lg-1 col-xl-6 order-lg-2 order-4 text-end">
+				<div class="col-auto col-lg-1 col-xl-7 order-lg-2 order-4 text-end">
 					<nav class="header__navbar d-xl-block d-none">
 					<ul>
 						<? $APPLICATION->IncludeComponent(
@@ -130,7 +130,7 @@ $isMain = $APPLICATION->GetCurPage(false) === '/';
 
 					</div>
 				</div>
-				<div class="offset-xl-0 offset-lg-4 col-5 col-xl-4 d-lg-block d-none order-4">
+				<div class="offset-xl-0 offset-lg-5 col-5 col-xl-4 d-lg-block d-none order-4">
 					<div class="header__contacts">
 						<div class="contacts__phone">
 
@@ -170,13 +170,13 @@ $isMain = $APPLICATION->GetCurPage(false) === '/';
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-1 d-lg-block d-none order-4">
+				<!--div class="col-lg-1 d-lg-block d-none order-4">
 					<div class="header__socials">
 						<a href="#" class="social__item"><img src="/assets/img/icons/facebook.svg"></a>
 						<a href="#" class="social__item"><img src="/assets/img/icons/vk.svg"></a>
 						<a href="#" class="social__item"><img src="/assets/img/icons/instagram.svg"></a>
 					</div>
-				</div>
+				</div-->
 				<div class="col-lg-2 col-sm-auto order-lg-4 order-sm-2 order-4 pt-2 pt-sm-0 mt-lg-4 dropdown">
 					<button class="button button__catalog bg-blue-2 dropdown-toggle" id="dropdownCatalog" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/img/icons/menu.svg">
 						<span class="d-none d-xxl-block"> Каталог товаров</span>

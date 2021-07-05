@@ -169,25 +169,26 @@ nav.header__navbar ul {
     display: flex;
     margin-bottom: 0px;
     padding-left: 0px;
+    justify-content: center;
 }
 
 nav.header__navbar ul li {
-    margin-right: 15px;
+    margin-right: 25px;
 }
 
 nav.header__navbar ul li a {
     font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 24px;
-    letter-spacing: 0em;
     text-align: left;
-    color: #3E3E3E;
+    color: #818181;
     text-decoration: none;
+    font-family: 'DIN Pro';
 }
 
 .header__contacts {
     display: flex;
+    justify-content: flex-end;
 }
 
 .contacts__phone {
@@ -204,13 +205,18 @@ nav.header__navbar ul li a {
 .contacts__phone a {
     text-decoration: none;
     font-family: DIN Pro;
-    font-size: 19px;
+    font-size: 21px;
     font-style: normal;
     font-weight: 500;
     line-height: 24px;
     letter-spacing: 0em;
     color: #255FAF;
     text-align: left;
+}
+
+.contacts__phone a.link {
+    text-align: right;
+    text-decoration: underline;
 }
 
 a.link {
@@ -226,12 +232,12 @@ a.link {
 
 .contacts__email a {
     font-family: DIN Pro;
-    font-size: 19px;
+    font-size: 21px;
     font-style: normal;
     font-weight: 500;
     line-height: 24px;
     letter-spacing: 0em;
-    text-align: left;
+    text-align: right;
     color: #255FAF;
     text-decoration: none;
 }
@@ -243,7 +249,7 @@ a.link {
     font-weight: 400;
     line-height: 15px;
     letter-spacing: 0em;
-    text-align: left;
+    text-align: right;
     margin-top: 5px;
 }
 
@@ -531,6 +537,12 @@ a.link:hover,
     color: #01aef2;
 }
 
+.sticky__module-items .bx-basket.bx-opener {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
 
 /* Mobile header */
 
@@ -603,8 +615,8 @@ a.link:hover,
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-    padding-top: 100px;
-    padding-bottom: 130px;
+    padding-top: 50px;
+    padding-bottom: 90px;
     position: relative;
     overflow: hidden;
 }
@@ -622,8 +634,8 @@ a.link:hover,
 }
 
 .inner-block__overlay {
-    padding: 35px;
-    height: 140px;
+    padding: 0px 25px;
+    height: 130px;
     display: flex;
     align-items: center;
 }
@@ -688,7 +700,7 @@ a.link:hover,
 .banner__info {
     display: flex;
     align-items: center;
-    margin-bottom: 55px;
+    margin-bottom: 35px;
     margin-top: 25px;
 }
 
@@ -723,7 +735,7 @@ a.link:hover,
 }
 
 section.trust-logo__section {
-    padding-top: 75px;
+    padding-top: 95px;
 }
 
 p.banner__form-text {
@@ -1027,6 +1039,7 @@ section.newcollection__section {
 
 section.collections__section {
     padding: 90px 0px;
+    background: url(/assets/img/background/backpodbor.jpg);
 }
 
 .collections__section .title-with-arrow {
@@ -2609,6 +2622,10 @@ section.page__content.delivery__page {
 
 .top-info__block {
     font-weight: 300;
+}
+
+.privacy_checkbox {
+    font-size: 15px;
 }
 
 
