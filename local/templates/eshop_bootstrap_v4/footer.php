@@ -104,7 +104,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="offset-lg-1 col-lg-6 footer__col-2 d-lg-block d-none">
+			<div class="col-lg-7 footer__col-2 d-lg-block d-none">
 				<div class="title__footer">
 				<? $APPLICATION->IncludeComponent(
 							"bitrix:main.include",
@@ -148,7 +148,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-2 footer__col-3 col-md-2">
+			<div class="col-lg-2 footer__col-3 col-md-3">
 				<div class="title__footer">
 				<? $APPLICATION->IncludeComponent(
 							"bitrix:main.include",
