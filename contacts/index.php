@@ -70,17 +70,16 @@ $APPLICATION->SetTitle("Контакты");
                 </div>
                 <div class="col-lg-6 mb-5">
                     <h1> Напишите нам </h1>
-                    <p> подробно ответим на все вопросы. <br>
-                        Подберём решение под ваш бюджет </p>
+                
                     <form class="form form__contact">
                         <div class="mb-3"><textarea class="input input__style-2" placeholder="Ваше сообщение"></textarea></div>
                         <div class="mb-3"><input type="text" class="input input__style-2" placeholder="Имя"></div>
                         <div class="mb-3"><input type="text" class="input input__style-2" placeholder="Номер телефона"></div>
                         <div class="mb-3"><input type="text" class="input input__style-2" placeholder="E-mail"></div>
                         <input type="submit" class="button bg-blue-1" value="Отправить">
-                        <div class="mt-3 form-check">
+                        <div class="mt-3 form-check privacy_checkbox">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1"> Я даю согласие на обработку персональных данных в соответствии <a href="/policy"> с правилами использования сайта.</a></label>
+                            <label class="form-check-label" for="exampleCheck1"> Я даю согласие на обработку персональных данных в соответствии <a href="/policy"> с&nbsp;правилами&nbsp;использования&nbsp;сайта.</a></label>
                         </div>
                         
                     </form>

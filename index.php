@@ -8,7 +8,7 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
       <section class="banner__section">
         <div class="banner__overlay">
           <div class="container">
-            <h1>Производим  сувениры, подарки и<br> промо-одежду для увеличения продаж <br> в вашем бизнесе </h1>
+            <h1>Производим  сувениры, подарки и промо-одежду <br> для увеличения продаж в вашем бизнесе </h1>
             <div class="banner__info"><img src="/assets/img/icons/information-c2.svg"><p> Работаем только с юридическими лицами. Минимальный заказ от <? $APPLICATION->IncludeComponent(
 							"bitrix:main.include",
 							"",
@@ -38,15 +38,15 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
            <div class="col-lg-6 col-md-6 col-12 col pe-md-0 pb-2 inner-block__col-2">
              <div class="inner-block__overlay">
               <div class="inner-block__text">
-                <p> Нам доверяют </p>
-                <span> Europa Plus, Royal Canin, Yota, Норникель, Lavazza, Nexign</span>
+                <p> Опыт </p>
+                <span>За счёт сотен кейсов и насмотренности </span>
               </div>
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-12 ps-md-2 inner-block__col-1">
            <div class="inner-block__overlay">
             <div class="inner-block__text">
-              <p> Умеем выполнять срочные заказы </p>
+              <p> Выполняем срочные заказы </p>
               <span> Готовый товар у вас на руках за 4 рабочих дня.<br> Сроки прописываем в договоре</span>
             </div>
           </div>
@@ -387,17 +387,17 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
       <div class="row">
         <div  class="col-lg-4">
           <img src="/assets/img/demo/demo-podborka-1.jpg" class="collections__img" width="100%">
-          <div class="collections__title"> 8 марта </div>
+          <div class="collections__title"> Эко </div>
           <div class="collections__button"> <button class="button bg-blue-1">Смотреть </button> </div>
         </div>
         <div class="col-lg-4">
           <img src="/assets/img/demo/demo-podborka-2.jpg" class="collections__img" width="100%">
-          <div class="collections__title"> 23 февраля  </div>
+          <div class="collections__title"> Текстиль  </div>
           <div class="collections__button"> <button class="button bg-blue-1">Смотреть </button> </div>
         </div>
         <div class="col-lg-4">
           <img src="/assets/img/demo/demo-podborka-3.jpg" class="collections__img" width="100%">
-          <div class="collections__title"> Эко-товары </div>
+          <div class="collections__title"> Электроника </div>
           <div class="collections__button"> <button class="button bg-blue-1">Смотреть </button> </div>
         </div>
       </div>
@@ -406,17 +406,17 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
       <div class="collection__slider">
         <div class="collection__slider-item">
           <img src="/assets/img/demo/demo-podborka-1.jpg" class="collections__img" width="100%">
-          <div class="collections__title"> 8 марта </div>
+          <div class="collections__title"> Эко </div>
           <div class="collections__button"> <button class="button bg-blue-1">Смотреть </button> </div>
         </div>
         <div class="collection__slider-item">
           <img src="/assets/img/demo/demo-podborka-2.jpg" class="collections__img" width="100%">
-          <div class="collections__title"> 23 февраля </div>
+          <div class="collections__title"> Текстиль </div>
           <div class="collections__button"> <button class="button bg-blue-1">Смотреть </button> </div>
         </div>
         <div class="collection__slider-item">
           <img src="/assets/img/demo/demo-podborka-3.jpg" class="collections__img" width="100%">
-          <div class="collections__title"> Эко-товары </div>
+          <div class="collections__title"> Электроника </div>
           <div class="collections__button"> <button class="button bg-blue-1">Смотреть </button> </div>
         </div>
       </div>
@@ -655,46 +655,15 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
       </div>
 </div>
 </section>
-<section class="foz__section">
-  <div class="container">
-    <div class="overlay__foz">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <div class="foz__title"> Получите точный расчет стоимости&nbsp;и&nbsp;сроки на ваш заказ </div> 
-        </div>
-        <div class="col-lg-6">
-         <div class="foz__description"> Не знаете какой товар выбрать под задачи? Что нужно учитывать в Вашей сфере, чтобы достичь результата? во сколько всё в итоге обойдётся? </div>
-       </div>
-     </div>
-   </div>
-   <div class="row foz__row">
-    <div class="col-12">
-      <div class="foz__title2"> Оставьте заявку, чтобы получить: </div>
-    </div>
-    <div class="col-lg-4 foz__item">
-      <div class="foz__img"><img src="/assets/img/foz-1.png"></div>
-      <div class="foz__text-item">
-        Стоимость и сроки <br> готового заказа
-      </div>
-    </div>
-    <div class="col-lg-4 foz__item">
-      <div class="foz__img"><img src="/assets/img/foz-2.png"></div>
-      <div class="foz__text-item">
-        Помощь с подготовкой <br>дизайн-макета для печати
-      </div>
-    </div>
-    <div class="col-lg-4 foz__item">
-      <div class="foz__img"><img src="/assets/img/foz-3.png"></div>
-      <div class="foz__text-item">
-        Индивидуальное коммерческое<br> предложение под ваш бюджет
-      </div>
-    </div>
-    <div class="col-12 foz__button"> 
-      <button class="button bg-gray" data-bs-toggle="modal" data-bs-target="#foz">Оставить заявку и получить все бонусы</button>
-    </div>
-  </div>
-</div>
-</section>
+<? $APPLICATION->IncludeComponent(
+							"bitrix:main.include",
+							"",
+							array(
+								"AREA_FILE_SHOW" => "file",
+								"PATH" => SITE_DIR . "include/foz-section.php"
+							),
+							false
+						); ?> 
 <section class="portfolio__section">
   <div class="container">
     <div class="slider__with-arrow">
