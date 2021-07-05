@@ -819,7 +819,9 @@ section.catalog-category__section {
 
 .product__card-price.old {
     text-decoration: line-through;
-    margin-right: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    opacity: 0.5;
 }
 
 .category__item button.button.bg-blue-1 {
@@ -950,6 +952,8 @@ li.nav-item {
     line-height: 18px;
     letter-spacing: 0em;
     text-align: left;
+    display: flex;
+    flex-flow: column;
 }
 
 .product__card-button button {
