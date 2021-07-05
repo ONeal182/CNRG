@@ -1573,7 +1573,7 @@ footer {
 .footer__catalog {
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding-right: 65px;
 }
 
@@ -1595,11 +1595,11 @@ footer {
 
 .menu__footer {
     padding-right: 0px;
-    width: 33%;
+    width: 38%;
 }
 
-.menu__footer:nth-child(1) {
-    flex: 0;
+.footer__col-2 {
+    padding-left: 45px;
 }
 
 .title__footer {
