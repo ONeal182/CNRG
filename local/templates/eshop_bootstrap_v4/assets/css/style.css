@@ -973,6 +973,30 @@ li.nav-item {
     padding: 5px;
 }
 
+.product__card .disabled .proudct__card-cart .price-block {
+    display: none;
+}
+
+.product__card.disabled .product__card-price {
+    display: none;
+}
+
+.product__card.disabled .product__card-button {
+    width: 100%;
+}
+
+.product__card.disabled .product__card-button button {
+    width: 100%;
+    justify-content: center;
+    background: none;
+    color: #000;
+    border: 1px solid #eee;
+}
+
+.product__card.disabled .product__img-gallery {
+    opacity: .7;
+}
+
 
 /* New Collections section */
 
@@ -2972,6 +2996,6 @@ section.hits__section {
 }
 
 input[disabled],
-button[disabled]{
+button[disabled] {
     pointer-events: none;
 }
