@@ -9,7 +9,12 @@ $component = $this->getComponent();
 $arParams = $component->applyTemplateModifications();
 
 foreach ($arResult['ITEMS'][0] as $k => &$item) {
-	foreach ($item['OFFERS'] as $offer) {
+	foreach ($item['OFFERS'] as &$offer) {
+		$res = CIBlockElement::GetByID($offer['ID']);
+		if($ar_res = $res->GetNext()) {
+			$offer['NAME'] = $ar_res['NAME'];
+		}
+
 		$item['PRICES'][] = $offer['CATALOG_PURCHASING_PRICE'];
 		$item['COMMON_QUANTITY'] += $offer["PRODUCT"]["QUANTITY"];
 	}

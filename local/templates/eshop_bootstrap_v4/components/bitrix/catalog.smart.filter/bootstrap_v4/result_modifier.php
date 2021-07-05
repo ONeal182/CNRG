@@ -39,10 +39,19 @@ $arParams["FILTER_VIEW_MODE"] = (isset($arParams["FILTER_VIEW_MODE"]) && toUpper
 $arParams["POPUP_POSITION"] = (isset($arParams["POPUP_POSITION"]) && in_array($arParams["POPUP_POSITION"], array("left", "right"))) ? $arParams["POPUP_POSITION"] : "left";
 
 // checked
-foreach ($arResult["ITEMS"] as $key => $arItem) {
+foreach ($arResult["ITEMS"] as $key => &$arItem) {
 	foreach($arItem["VALUES"] as $val => $ar) {
-		if ($ar['CHECKED']) {
-			$arResult['CHECKED'][] = $ar;
+		// для свойств с типом Список и единственным вариантом "Да"
+		$isLikeCheckbox = $arItem['PROPERTY_TYPE'] == 'L' &&
+			count($arItem["VALUES"]) == 1 &&
+			reset($arItem["VALUES"])['UPPER'] == 'ДА';
+
+		if ($isLikeCheckbox) {
+			$arItem['ISLIKECHECKBOX'] = true;
+		} else {
+			if ($ar['CHECKED']) {
+				$arResult['SHOWN_CHECKED'][] = $ar;
+			}
 		}
 	}
 }

@@ -87,10 +87,11 @@ if (isset($arResult['ITEM'])) {
 	$showSubscribe = $arParams['PRODUCT_SUBSCRIPTION'] === 'Y' && ($item['CATALOG_SUBSCRIBE'] === 'Y' || $haveOffers);
 
 	$itemHasDetailUrl = isset($item['DETAIL_PAGE_URL']) && $item['DETAIL_PAGE_URL'] != '';
+	$offer = reset($item['OFFERS']);
 	?>
 
-  <div class="product product__card col-lg-4 col-sm-6"
-      id="<?= $areaId ?>" data-entity="item">
+<div class="product product__card col-lg-4 col-sm-6 <?= !$offer['CAN_BUY'] ? 'disabled' : '' ?>"
+     id="<?= $areaId ?>" data-entity="item">
 	  <?
 	  $documentRoot = Main\Application::getDocumentRoot();
 	  $templatePath = mb_strtolower($arResult['TYPE']) . '/template.php';
@@ -271,7 +272,7 @@ if (isset($arResult['ITEM'])) {
     <script>
 			var <?=$obName?> = new JCCatalogItem(<?=CUtil::PhpToJSObject($jsParams, false, true)?>);
     </script>
-  </div>
+</div>
 	<?
 	unset($item, $actualItem, $minOffer, $itemIds, $jsParams);
 }

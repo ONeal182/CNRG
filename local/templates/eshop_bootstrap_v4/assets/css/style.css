@@ -903,7 +903,7 @@ li.nav-item {
     left: 0px;
     display: flex;
     flex-flow: column;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .img-thumbs {
@@ -2969,4 +2969,9 @@ section.hits__section {
 
 .hits__section .title-with-arrow {
     margin-bottom: 25px;
+}
+
+input[disabled],
+button[disabled]{
+    pointer-events: none;
 }
