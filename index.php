@@ -365,66 +365,71 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 
   </div>
 </section>
-<section class="collections__section">
-  <div class="container">
-   <div class="slider__with-arrow">
-    <div class="title-with-arrow">
-      <h2> Подборки товаров </h2>
-      <div class="slider__arrow d-flex d-lg-none">
-        <div class="slider__arrow-left">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.1724 25.1724L16.1724 19.1724L22.1724 13.1724" stroke="#255FAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="slider__arrow-right">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17 14L23 20L17 26" stroke="#255FAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div class="d-none d-lg-block">
-      <div class="row">
-        <div  class="col-lg-4">
-          <img src="/assets/img/demo/demo-podborka-1.jpg" class="collections__img" width="100%">
-          <div class="collections__title"> Эко </div>
-          <div class="collections__button"> <button class="button bg-blue-1">Смотреть </button> </div>
-        </div>
-        <div class="col-lg-4">
-          <img src="/assets/img/demo/demo-podborka-2.jpg" class="collections__img" width="100%">
-          <div class="collections__title"> Текстиль  </div>
-          <div class="collections__button"> <button class="button bg-blue-1">Смотреть </button> </div>
-        </div>
-        <div class="col-lg-4">
-          <img src="/assets/img/demo/demo-podborka-3.jpg" class="collections__img" width="100%">
-          <div class="collections__title"> Электроника </div>
-          <div class="collections__button"> <button class="button bg-blue-1">Смотреть </button> </div>
-        </div>
-      </div>
-    </div>
-    <div class="d-block d-lg-none">
-      <div class="collection__slider">
-        <div class="collection__slider-item">
-          <img src="/assets/img/demo/demo-podborka-1.jpg" class="collections__img" width="100%">
-          <div class="collections__title"> Эко </div>
-          <div class="collections__button"> <button class="button bg-blue-1">Смотреть </button> </div>
-        </div>
-        <div class="collection__slider-item">
-          <img src="/assets/img/demo/demo-podborka-2.jpg" class="collections__img" width="100%">
-          <div class="collections__title"> Текстиль </div>
-          <div class="collections__button"> <button class="button bg-blue-1">Смотреть </button> </div>
-        </div>
-        <div class="collection__slider-item">
-          <img src="/assets/img/demo/demo-podborka-3.jpg" class="collections__img" width="100%">
-          <div class="collections__title"> Электроника </div>
-          <div class="collections__button"> <button class="button bg-blue-1">Смотреть </button> </div>
-        </div>
-      </div>
-    </div>
-    <div class="slider__dots d-block d-lg-none"></div>
-  </div>
-</div>
-</section>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"collections", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "8",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "CATEGORY",
+		),
+		"SET_BROWSER_TITLE" => "Y",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "Y",
+		"SET_META_KEYWORDS" => "Y",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "Y",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"COMPONENT_TEMPLATE" => "collections"
+	),
+	false
+);?>
 <section class="hits__section">
 <div class="container">
 <div class="title-with-arrow">
