@@ -800,84 +800,77 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 
   </div>
 </section>
-<section class="reviews__section">
-  <div class="container">
-   <div class="slider__with-arrow">
-    <div class="title-with-arrow">
-      <h2> Отзывы  </h2>
-      <div class="slider__arrow">
-        <div class="slider__arrow-left">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.1724 25.1724L16.1724 19.1724L22.1724 13.1724" stroke="#255FAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="slider__arrow-right">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17 14L23 20L17 26" stroke="#255FAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="reviews__slider">
-    <div class="reviews__item">
-      <div class="reviews__overlay">
-        <div class="reviews__img-block">
-          <img src="/assets/img/demo/demo-reviews-1.jpg">
-          <div class="reviews__img-name">
-            <p> Юрий Щербаков </p>
-            <span> 20 декабря, 2019 </span>
-          </div>
-        </div>
-        <div class="reviews__text"> Давно работаем, качество работы всегда устраивало, заказываю 
-          не  первый раз различную полиграфию и сувенирку. Мне нравится, что не нужно нанимать дополнительных людей для создания дизайна, если не могу выбрать 
-        подходящий шаблон или возникла сложная идея - просто заказываю дизайн и достаточно быстро получаю макет на утверждение. </div>
-      </div>
-    </div>
-    <div class="reviews__item">
-      <div class="reviews__overlay">
-        <div class="reviews__img-block">
-          <img src="/assets/img/demo/demo-reviews-1.jpg">
-          <div class="reviews__img-name">
-            <p> Юрий Щербаков </p>
-            <span> 20 декабря, 2019 </span>
-          </div>
-        </div>
-        <div class="reviews__text"> Давно работаем, качество работы всегда устраивало, заказываю 
-          не  первый раз различную полиграфию и сувенирку. Мне нравится, что не нужно нанимать дополнительных людей для создания дизайна, если не могу выбрать 
-        подходящий шаблон или возникла сложная идея - просто заказываю дизайн и достаточно быстро получаю макет на утверждение. </div>
-      </div>
-    </div>
-    <div class="reviews__item">
-      <div class="reviews__overlay">
-        <div class="reviews__img-block">
-          <img src="/assets/img/demo/demo-reviews-1.jpg">
-          <div class="reviews__img-name">
-            <p> Юрий Щербаков </p>
-            <span> 20 декабря, 2019 </span>
-          </div>
-        </div>
-        <div class="reviews__text"> Давно работаем, качество работы всегда устраивало, заказываю 
-          не  первый раз различную полиграфию и сувенирку. Мне нравится, что не нужно нанимать дополнительных людей для создания дизайна, если не могу выбрать 
-        подходящий шаблон или возникла сложная идея - просто заказываю дизайн и достаточно быстро получаю макет на утверждение. </div>
-      </div>
-    </div>
-    <div class="reviews__item">
-      <div class="reviews__overlay">
-        <div class="reviews__img-block">
-          <img src="/assets/img/demo/demo-reviews-1.jpg">
-          <div class="reviews__img-name">
-            <p> Юрий Щербаков </p>
-            <span> 20 декабря, 2019 </span>
-          </div>
-        </div>
-        <div class="reviews__text"> Давно работаем, качество работы всегда устраивало, заказываю 
-          не  первый раз различную полиграфию и сувенирку. Мне нравится, что не нужно нанимать дополнительных людей для создания дизайна, если не могу выбрать 
-        подходящий шаблон или возникла сложная идея - просто заказываю дизайн и достаточно быстро получаю макет на утверждение. </div>
-      </div>
-    </div>
-  </div>
-</section>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"reviews", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "7",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "REVIEWDATE",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "Y",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "Y",
+		"SET_META_KEYWORDS" => "Y",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "Y",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"COMPONENT_TEMPLATE" => "reviews",
+		"TEMPLATE_THEME" => "blue",
+		"MEDIA_PROPERTY" => "",
+		"SLIDER_PROPERTY" => "",
+		"SEARCH_PAGE" => "/search/",
+		"USE_RATING" => "N",
+		"USE_SHARE" => "N"
+	),
+	false
+);?>
 <section class="foz2__section">
   <div class="container">
     <div class="row">

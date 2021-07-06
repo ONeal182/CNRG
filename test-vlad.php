@@ -99,7 +99,7 @@ $APPLICATION->SetTitle("test-vlad");
 	)
 );?><?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	"bootstrap_v4", 
+	"reviews", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -158,7 +158,7 @@ $APPLICATION->SetTitle("test-vlad");
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "bootstrap_v4",
+		"COMPONENT_TEMPLATE" => "reviews",
 		"TEMPLATE_THEME" => "blue",
 		"MEDIA_PROPERTY" => "",
 		"SLIDER_PROPERTY" => "",
