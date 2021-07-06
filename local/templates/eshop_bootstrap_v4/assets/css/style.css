@@ -173,12 +173,16 @@ nav.header__navbar ul {
 }
 
 nav.header__navbar ul li {
-    margin-right: 25px;
+    margin-right: 5px;
 }
 
 nav.header__navbar ul li a {
-    font-size: 16px;
-    font-weight: 500;
+    border: 1px solid #eee;
+    padding: 9px 15px;
+    font-weight: 400;
+    font-size: 15px;
+    background: #fff;
+    border-radius: 5px;
     line-height: 24px;
     text-align: left;
     color: #818181;
