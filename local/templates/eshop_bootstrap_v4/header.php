@@ -49,23 +49,23 @@ $isMain = $APPLICATION->GetCurPage(false) === '/';
 				<div class="top-info__block d-flex justify-content-center">
 					<img src="/assets/img/icons/information.svg" class="img top-info__icon">
 					<div class="top-info__text d-none d-lg-block">Работаем только с юридическими лицами. Минимальный заказ от <? $APPLICATION->IncludeComponent(
-							"bitrix:main.include",
-							"",
-							array(
-								"AREA_FILE_SHOW" => "file",
-								"PATH" => SITE_DIR . "include/minorder.php"
-							),
-							false
-						); ?></div>
+																																	"bitrix:main.include",
+																																	"",
+																																	array(
+																																		"AREA_FILE_SHOW" => "file",
+																																		"PATH" => SITE_DIR . "include/minorder.php"
+																																	),
+																																	false
+																																); ?></div>
 					<div class="top-info__text d-block d-lg-none">Работаем только с юр.лицами. Мин.заказ от <? $APPLICATION->IncludeComponent(
-							"bitrix:main.include",
-							"",
-							array(
-								"AREA_FILE_SHOW" => "file",
-								"PATH" => SITE_DIR . "include/minorder.php"
-							),
-							false
-						); ?></div>
+																												"bitrix:main.include",
+																												"",
+																												array(
+																													"AREA_FILE_SHOW" => "file",
+																													"PATH" => SITE_DIR . "include/minorder.php"
+																												),
+																												false
+																											); ?></div>
 				</div>
 			</div>
 		</div>
@@ -86,21 +86,21 @@ $isMain = $APPLICATION->GetCurPage(false) === '/';
 				</div>
 				<div class="col-auto col-lg-1 col-xl-7 order-lg-2 order-4 text-end">
 					<nav class="header__navbar d-xl-block d-none">
-					<ul>
-						<? $APPLICATION->IncludeComponent(
-							"bitrix:menu",
-							"header_first-menu",
-							array(
-								"ROOT_MENU_TYPE" => "bottom",	// Тип меню для первого уровня
-								"MAX_LEVEL" => "1",	// Уровень вложенности меню
-								"MENU_CACHE_TYPE" => "A",	// Тип кеширования
-								"CACHE_SELECTED_ITEMS" => "N",
-								"MENU_CACHE_TIME" => "36000000",	// Время кеширования (сек.)
-								"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
-								"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
-							),
-							false
-						); ?>
+						<ul>
+							<? $APPLICATION->IncludeComponent(
+								"bitrix:menu",
+								"header_first-menu",
+								array(
+									"ROOT_MENU_TYPE" => "bottom",	// Тип меню для первого уровня
+									"MAX_LEVEL" => "1",	// Уровень вложенности меню
+									"MENU_CACHE_TYPE" => "A",	// Тип кеширования
+									"CACHE_SELECTED_ITEMS" => "N",
+									"MENU_CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+									"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+									"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+								),
+								false
+							); ?>
 						</ul>
 					</nav>
 					<div class="header__navbar-mobile d-xl-none d-block">
@@ -110,20 +110,20 @@ $isMain = $APPLICATION->GetCurPage(false) === '/';
 									<img src="/assets/img/icons/mobilemenu.svg">
 								</a>
 								<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown" style="">
-								<? $APPLICATION->IncludeComponent(
-							"bitrix:menu",
-							"header_first-menu",
-							array(
-								"ROOT_MENU_TYPE" => "bottom",	// Тип меню для первого уровня
-								"MAX_LEVEL" => "1",	// Уровень вложенности меню
-								"MENU_CACHE_TYPE" => "A",	// Тип кеширования
-								"CACHE_SELECTED_ITEMS" => "N",
-								"MENU_CACHE_TIME" => "36000000",	// Время кеширования (сек.)
-								"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
-								"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
-							),
-							false
-						); ?>
+									<? $APPLICATION->IncludeComponent(
+										"bitrix:menu",
+										"header_first-menu",
+										array(
+											"ROOT_MENU_TYPE" => "bottom",	// Тип меню для первого уровня
+											"MAX_LEVEL" => "1",	// Уровень вложенности меню
+											"MENU_CACHE_TYPE" => "A",	// Тип кеширования
+											"CACHE_SELECTED_ITEMS" => "N",
+											"MENU_CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+											"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+											"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+										),
+										false
+									); ?>
 								</ul>
 							</li>
 						</ul>
@@ -177,214 +177,30 @@ $isMain = $APPLICATION->GetCurPage(false) === '/';
 						<a href="#" class="social__item"><img src="/assets/img/icons/instagram.svg"></a>
 					</div>
 				</div-->
-				<div class="col-lg-2 col-sm-auto order-lg-4 order-sm-2 order-4 pt-2 pt-sm-0 mt-lg-4 dropdown">
-					<button class="button button__catalog bg-blue-2 dropdown-toggle" id="dropdownCatalog" data-bs-toggle="dropdown" aria-expanded="false"><img src="/assets/img/icons/menu.svg">
-						<span class="d-none d-xxl-block"> Каталог товаров</span>
-						<span class="d-block d-xxl-none"> Каталог </span>
-					</button>
-
-					<div class="dropdown-menu catalog__dropdown-menu" aria-labelledby="dropdownCatalog">
-						<div class="d-flex dropdown__catalog-overlay">
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/odejda.svg">Одежда</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#">Футболки</a>
-										<a href="#">Рубашки поло</a>
-										<a href="#">Футболки для промо</a>
-										<a href="#">Кепки и бейсболки</a>
-										<a href="#">Панамы</a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/posuda.svg">Посуда</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#"> Кружки </a>
-										<a href="#"> Бокалы</a>
-										<a href="#"> Чайные наборы</a>
-										<a href="#"> Кофейные наборы</a>
-										<a href="#"> Столовые тарелки </a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/ruchki.svg">Ручки</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#"> Пластиковые ручки </a>
-										<a href="#"> Металлические ручки </a>
-										<a href="#"> Эко ручки </a>
-										<a href="#"> Карандаши </a>
-										<a href="#"> Текстовыделители </a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/zonty.svg">Зонты</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#">Футболки</a>
-										<a href="#">Рубашки поло</a>
-										<a href="#">Футболки для промо</a>
-										<a href="#">Кепки и бейсболки</a>
-										<a href="#">Панамы</a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/sumki.svg">Сумки</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#"> Кружки </a>
-										<a href="#"> Бокалы</a>
-										<a href="#"> Чайные наборы</a>
-										<a href="#"> Кофейные наборы</a>
-										<a href="#"> Столовые тарелки </a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/dom.svg">Дом</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#"> Пластиковые ручки </a>
-										<a href="#"> Металлические ручки </a>
-										<a href="#"> Эко ручки </a>
-										<a href="#"> Карандаши </a>
-										<a href="#"> Текстовыделители </a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/otdyh.svg">Отдых</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#">Футболки</a>
-										<a href="#">Рубашки поло</a>
-										<a href="#">Футболки для промо</a>
-										<a href="#">Кепки и бейсболки</a>
-										<a href="#">Панамы</a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/electronika.svg">Электроника</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#"> Кружки </a>
-										<a href="#"> Бокалы</a>
-										<a href="#"> Чайные наборы</a>
-										<a href="#"> Кофейные наборы</a>
-										<a href="#"> Столовые тарелки </a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/korppodarki.svg">Корпоративные подарки</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#"> Пластиковые ручки </a>
-										<a href="#"> Металлические ручки </a>
-										<a href="#"> Эко ручки </a>
-										<a href="#"> Карандаши </a>
-										<a href="#"> Текстовыделители </a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/ejednevnik.svg">Ежедневники и блокноты</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#"> Пластиковые ручки </a>
-										<a href="#"> Металлические ручки </a>
-										<a href="#"> Эко ручки </a>
-										<a href="#"> Карандаши </a>
-										<a href="#"> Текстовыделители </a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/podnabor.svg">Подарочные наборы</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#"> Пластиковые ручки </a>
-										<a href="#"> Металлические ручки </a>
-										<a href="#"> Эко ручки </a>
-										<a href="#"> Карандаши </a>
-										<a href="#"> Текстовыделители </a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/nagrada.svg">Наградная продукция</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#"> Пластиковые ручки </a>
-										<a href="#"> Металлические ручки </a>
-										<a href="#"> Эко ручки </a>
-										<a href="#"> Карандаши </a>
-										<a href="#"> Текстовыделители </a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/upakovka.svg">Упаковка</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#"> Пластиковые ручки </a>
-										<a href="#"> Металлические ручки </a>
-										<a href="#"> Эко ручки </a>
-										<a href="#"> Карандаши </a>
-										<a href="#"> Текстовыделители </a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/novyygod.svg">Новогодние подарки</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#"> Пластиковые ручки </a>
-										<a href="#"> Металлические ручки </a>
-										<a href="#"> Эко ручки </a>
-										<a href="#"> Карандаши </a>
-										<a href="#"> Текстовыделители </a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/suvenir.svg">Сувениры на заказ</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#"> Пластиковые ручки </a>
-										<a href="#"> Металлические ручки </a>
-										<a href="#"> Эко ручки </a>
-										<a href="#"> Карандаши </a>
-										<a href="#"> Текстовыделители </a>
-									</div>
-								</div>
-							</div>
-							<div class="dropdown__catalog-col">
-								<div class="dropdown__catalog-item">
-									<a class="dropdown-item" href="#"><img src="/assets/img/icons/catalog/prazdniki.svg">Праздники</a>
-									<div class="dropdown__catalog-item-list">
-										<a href="#"> Пластиковые ручки </a>
-										<a href="#"> Металлические ручки </a>
-										<a href="#"> Эко ручки </a>
-										<a href="#"> Карандаши </a>
-										<a href="#"> Текстовыделители </a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="header__catalog catalog__hide">
-						<div class="catalog__list">
-						</div>
-					</div>
-				</div>
+				<? $APPLICATION->IncludeComponent(
+					"bitrix:catalog.section.list",
+					"menu_list",
+					array(
+						"ADD_SECTIONS_CHAIN" => "Y",
+						"CACHE_FILTER" => "N",
+						"CACHE_GROUPS" => "Y",
+						"CACHE_TIME" => "36000000",
+						"CACHE_TYPE" => "A",
+						"COUNT_ELEMENTS" => "Y",
+						"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+						"FILTER_NAME" => "sectionsFilter",
+						"IBLOCK_ID" => "4",
+						"IBLOCK_TYPE" => "catalog",
+						"SECTION_CODE" => "",
+						"SECTION_FIELDS" => array("", ""),
+						"SECTION_ID" => $_REQUEST["SECTION_ID"],
+						"SECTION_URL" => "",
+						"SECTION_USER_FIELDS" => array("", ""),
+						"SHOW_PARENT_NAME" => "Y",
+						"TOP_DEPTH" => "2",
+						"VIEW_MODE" => "LINE"
+					)
+				); ?>
 				<div class="col-lg-9 col-auto order-lg-4 order-sm-2 ps-sm-0 mt-lg-4">
 					<div class="header__search">
 						<div class="search__overlay">
@@ -433,7 +249,7 @@ $isMain = $APPLICATION->GetCurPage(false) === '/';
 					</div>
 				</div>
 				<div class="col-lg-1 col-sm-2 order-lg-4 order-sm-3 d-none d-sm-block mt-lg-4">
-									<? $APPLICATION->IncludeComponent(
+					<? $APPLICATION->IncludeComponent(
 						"bitrix:sale.basket.basket.line",
 						"bootstrap_v5",
 						array(
@@ -460,23 +276,23 @@ $isMain = $APPLICATION->GetCurPage(false) === '/';
 		<div class="sticky__module-items">
 
 			<? $APPLICATION->IncludeComponent(
-						"bitrix:sale.basket.basket.line",
-						"bootstrap_v5",
-						array(
-							"PATH_TO_BASKET" => SITE_DIR . "personal/cart/",	// Страница корзины
-							"PATH_TO_PERSONAL" => SITE_DIR . "personal/",	// Страница персонального раздела
-							"SHOW_PERSONAL_LINK" => "N",	// Отображать персональный раздел
-							"SHOW_NUM_PRODUCTS" => "Y",	// Показывать количество товаров
-							"SHOW_TOTAL_PRICE" => "Y",	// Показывать общую сумму по товарам
-							"SHOW_PRODUCTS" => "N",	// Показывать список товаров
-							"POSITION_FIXED" => "N",	// Отображать корзину поверх шаблона
-							"SHOW_AUTHOR" => "Y",	// Добавить возможность авторизации
-							"PATH_TO_REGISTER" => SITE_DIR . "login/",	// Страница регистрации
-							"PATH_TO_PROFILE" => SITE_DIR . "personal/",	// Страница профиля
-							'MOBILE' => 'true'
-						),
-						false
-					); ?>
+				"bitrix:sale.basket.basket.line",
+				"bootstrap_v5",
+				array(
+					"PATH_TO_BASKET" => SITE_DIR . "personal/cart/",	// Страница корзины
+					"PATH_TO_PERSONAL" => SITE_DIR . "personal/",	// Страница персонального раздела
+					"SHOW_PERSONAL_LINK" => "N",	// Отображать персональный раздел
+					"SHOW_NUM_PRODUCTS" => "Y",	// Показывать количество товаров
+					"SHOW_TOTAL_PRICE" => "Y",	// Показывать общую сумму по товарам
+					"SHOW_PRODUCTS" => "N",	// Показывать список товаров
+					"POSITION_FIXED" => "N",	// Отображать корзину поверх шаблона
+					"SHOW_AUTHOR" => "Y",	// Добавить возможность авторизации
+					"PATH_TO_REGISTER" => SITE_DIR . "login/",	// Страница регистрации
+					"PATH_TO_PROFILE" => SITE_DIR . "personal/",	// Страница профиля
+					'MOBILE' => 'true'
+				),
+				false
+			); ?>
 			<a href="#" class="cart-block_item">
 				<img src="/assets/img/icons/phone.svg">
 				<span> Позвонить </span>
@@ -602,14 +418,14 @@ $isMain = $APPLICATION->GetCurPage(false) === '/';
 		</div>
 	</div>
 
-  <?php if (!$isMain) { ?>
-    <?$APPLICATION->IncludeComponent(
-      "bitrix:breadcrumb",
-      ".default",
-      Array(
-        "PATH" => "",
-        "SITE_ID" => "s1",
-        "START_FROM" => "0"
-      )
-    );?>
-  <?php } ?>
+	<?php if (!$isMain) { ?>
+		<? $APPLICATION->IncludeComponent(
+			"bitrix:breadcrumb",
+			".default",
+			array(
+				"PATH" => "",
+				"SITE_ID" => "s1",
+				"START_FROM" => "0"
+			)
+		); ?>
+	<?php } ?>
